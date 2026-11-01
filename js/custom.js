@@ -52,3 +52,15 @@ window.addEventListener('load', function() {
         try { localStorage.setItem('theme', next); } catch (e) {}
     });
 })();
+// إظهار / إخفاء كلمة المرور
+(function () {
+    var btn = document.getElementById('showPassword');
+    var input = document.getElementById('password');
+    if (!btn || !input) return;
+    btn.addEventListener('click', function () {
+        var show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        btn.querySelector('i').className = show ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+        btn.setAttribute('aria-label', show ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور');
+    });
+})();
