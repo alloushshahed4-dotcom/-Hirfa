@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>رنا خالد | حِرفة</title>
+        <!-- ضبط الوضع الليلي مبكراً قبل ظهور الصفحة-->
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <link rel="stylesheet" href="css/brands.min.css"/>
+        <link rel="stylesheet" href="css/fontawesome.min.css"/>
+        <!--  استدعاء ملف البوتوستراب  -->
+        <link href="css/Bootstrapvarsio5.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- ملفات الاتصال المسبق بخطوط قوقل وأيقونة الموقع -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="image/Logo Mark.png" type="images/x-icon">
+    </head>
+    <body> 
+        <main>
+            <!-- start nav -->
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="image/Logo.png" alt="" ></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="freelancer.html">ابحث عن مستقل</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#search">الخدمات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="jobs.html">الوظائف</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#why">الفرق</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#work">كيف تعمل</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn1"  >
+                            <div>
+                                <img src="image/languages.png" alt="">
+                                <p>EN</p>
+                            </div>
+                        </button>
+                        <button type="button" class="btn btn2" id="themeToggle" aria-label="تبديل الوضع الليلي"><i class="fa-regular fa-moon"></i></button>
+                        <button type="button" class="btn btn3" >تسجيل الدخول</button>
+                        <button type="button" class="btn btn4">ابدأ الآن</button>
+                    </div>
+                </div>
+            </nav>
+            <!-- end nav -->
+            <!-- start cover -->
+            <section class="cover">
+                <img src="image/Sparkle.png" alt="" class="img1">
+                <img src="image/Sparkle2.png" alt="" class="img2">
+                <img src="image/Sparkle.png" alt="" class="img3">
+                <div class="container">
+                    <div class="all">
+                        <div class="div1">
+                            <div class="m1">ر</div>
+                            <div class="m2">
+                                <div class="p1">
+                                    <p class="s1">رنا خالد</p>
+                                    <i class="fa-regular fa-circle-check s2"></i>
+                                    <p class="s3">متاحة للعمل</p>
+                                </div>
+                                <p class="p2">مطوّرة واجهات أمامية، متخصصة في React</p>
+                                <div class="p3">
+                                    <div class="s1">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p>عمّان، الأردن</p>
+                                    </div>
+                                    <div class="s2">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>عضو منذ 2024</p>
+                                    </div>
+                                    <div class="s3">
+                                        <i class="fa-solid fa-star"></i>
+                                        <p>4.9 <span>(38 تقييماً)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m3">
+                                <a href="#" class="p1">تواصل معها</a>
+                                <button class="p2"><i class="fa-regular fa-heart"></i> حفظ</button>
+                                <button class="p3"><i class="fa-regular fa-paper-plane"></i> مشاركة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end cover -->
+            <!-- start profile -->
+            <section class="profile">
+                <div class="container">
+                    <div class="all">
+                        <div class="div1">
+                            <div class="m1">
+                                <a href="#about" class="p1 active">نبذة</a>
+                                <a href="#works" class="p2">معرض الأعمال <span>(6)</span></a>
+                                <a href="#services" class="p3">الخدمات <span>(2)</span></a>
+                                <a href="#about" class="p4">الخبرات والشهادات</a>
+                                <a href="#reviews" class="p5">التقييمات <span>(38)</span></a>
+                            </div>
+                            <div class="m2" id="about">
+                                <p class="p1">نبذة عني</p>
+                                <p class="p2">أبني واجهات ويب سريعة ومتجاوبة بالعربية والإنجليزية. خمس سنوات مع React وNext.js، عملت مع شركات ناشئة في الأردن والخليج على لوحات تحكم ومتاجر إلكترونية ومواقع تعريفية. أهتم بالتفاصيل: أداء عالٍ، كود نظيف يسهل على فريقك تطويره، وتسليم في الموعد.</p>
+                                <p class="p3">المهارات</p>
+                                <div class="p4">
+                                    <p class="s1">React</p>
+                                    <p class="s2">Next.js</p>
+                                    <p class="s3">TypeScript</p>
+                                    <p class="s4">Tailwind CSS</p>
+                                    <p class="s5">REST APIs</p>
+                                    <p class="s6">RTL</p>
+                                    <p class="s7">Figma</p>
+                                </div>
+                                <p class="p5">اللغات</p>
+                                <p class="p6">العربية (اللغة الأم) · الإنجليزية (متقدم)</p>
+                            </div>
+                            <div class="m3" id="works">
+                                <div class="p1">
+                                    <p class="s1">معرض الأعمال</p>
+                                    <a href="#" class="s2">عرض الكل <i class="fa-solid fa-arrow-left-long"></i></a>
+                                </div>
+                                <div class="p2">
+                                    <div class="s1">
+                                        <div class="a1"><div></div></div>
+                                        <p class="a2">لوحة تحليلات</p>
+                                        <p class="a3">React · Charts</p>
+                                    </div>
+                                    <div class="s2">
+                                        <div class="a1"><div></div></div>
+                                        <p class="a2">متجر إلكتروني</p>
+                                        <p class="a3">Next.js · Stripe</p>
+                                    </div>
+                                    <div class="s3">
+                                        <div class="a1"></div>
+                                        <p class="a2">تطبيق مهام</p>
+                                        <p class="a3">React Native</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m4" id="services">
+                                <p class="p1">خدمات رنا</p>
+                                <div class="p2">
+                                    <div class="s1">
+                                        <div class="a1">
+                                            <p>الأكثر طلباً</p>
+                                            <i class="fa-solid fa-code"></i>
+                                        </div>
+                                        <div class="a2">
+                                            <p class="b1">ر</p>
+                                            <p class="b2">رنا خالد</p>
+                                            <i class="fa-regular fa-circle-check"></i>
+                                        </div>
+                                        <p class="a3">سأبني لك صفحة هبوط سريعة ومتجاوبة</p>
+                                        <div class="a4">
+                                            <div class="b1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <p>4.9 <span>(23)</span></p>
+                                            </div>
+                                            <p class="b2">يبدأ من <span>$90</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="s2">
+                                        <div class="a1">
+                                            <i class="fa-solid fa-code"></i>
+                                        </div>
+                                        <div class="a2">
+                                            <p class="b1">ر</p>
+                                            <p class="b2">رنا خالد</p>
+                                            <i class="fa-regular fa-circle-check"></i>
+                                        </div>
+                                        <p class="a3">سأحوّل تصميمك من Figma إلى صفحة React</p>
+                                        <div class="a4">
+                                            <div class="b1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <p>5.0 <span>(12)</span></p>
+                                            </div>
+                                            <p class="b2">يبدأ من <span>$120</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m5" id="reviews">
+                                <div class="p1">
+                                    <p class="s1">آراء العملاء</p>
+                                    <div class="s2">
+                                        <i class="fa-solid fa-star"></i>
+                                        <p>4.9 <span>من 38 تقييماً</span></p>
+                                    </div>
+                                </div>
+                                <div class="p2">
+                                    <div class="s1">
+                                        <p class="a1">م</p>
+                                        <div class="a2">
+                                            <p class="b1">شركة مدار للتقنية</p>
+                                            <p class="b2">لوحة تحكم لإدارة الطلبات · قبل أسبوعين</p>
+                                        </div>
+                                        <div class="a3">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="s2">عمل احترافي وسرعة في الرد. سلّمت المشروع قبل الموعد، والكود مرتب وسهل علينا تطويره. سنتعامل معها مجدداً بالتأكيد.</p>
+                                </div>
+                                <div class="p3">
+                                    <div class="s1">
+                                        <p class="a1">أ</p>
+                                        <div class="a2">
+                                            <p class="b1">أحمد السالم</p>
+                                            <p class="b2">متجر إلكتروني لمنتجات يدوية · قبل شهر</p>
+                                        </div>
+                                        <div class="a3">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="s2">فهمت المطلوب من أول مكالمة، واقترحت تحسينات على التصميم زادت المبيعات. أنصح بها بشدة.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div2">
+                            <div class="m1">
+                                <p class="p1">$15 <span>/ ساعة</span></p>
+                                <div class="p2">
+                                    <div class="s1">
+                                        <p class="a1">47</p>
+                                        <p class="a2">مشروعاً</p>
+                                    </div>
+                                    <div class="s2">
+                                        <p class="a1">98%</p>
+                                        <p class="a2">نسبة الإنجاز</p>
+                                    </div>
+                                    <div class="s3">
+                                        <p class="a1">100%</p>
+                                        <p class="a2">في الموعد</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="p3">اطلبها لمشروع</a>
+                                <a href="#" class="p4">أرسل رسالة</a>
+                                <div class="p5">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <p>دفعتك محجوزة حتى تستلم العمل</p>
+                                </div>
+                            </div>
+                            <div class="m2">
+                                <p class="p1">التوثيق</p>
+                                <div class="p2">
+                                    <div class="s1">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <p>الهوية الشخصية</p>
+                                    </div>
+                                    <p class="s2">موثّق</p>
+                                </div>
+                                <div class="p3">
+                                    <div class="s1">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <p>البريد الإلكتروني</p>
+                                    </div>
+                                    <p class="s2">موثّق</p>
+                                </div>
+                                <div class="p4">
+                                    <div class="s1">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <p>رقم الهاتف</p>
+                                    </div>
+                                    <p class="s2">موثّق</p>
+                                </div>
+                                <div class="p5">
+                                    <div class="s1">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>طريقة الدفع</p>
+                                    </div>
+                                    <p class="s2">قيد المراجعة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://web.whatsapp.com/" target="_blank" class="whats"><img src="image/WhatsApp FAB.png" alt=""></a>
+            </section>
+            <!-- end profile -->
+            <!-- start footer -->
+            <footer>
+                <div class="container">
+                    <div class="all">
+                        <div class="div1">
+                            <div class="m1">
+                                <img src="image/Logo0.png" alt="">
+                                <p class="p1">منصة عربية تربط المستقلين بالعملاء والشركات حول العالم. اعرض حرفتك، واكسب فرصتك.</p>
+                                <div class="p2">
+                                    <a href="https://instagram.com/" target="_blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://facebook.com/" target="_blank">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/" target="_blank">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://x.com/" target="_blank">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="m2">
+                                <div class="p1">
+                                    <p class="s1">المنصة</p>
+                                    <a href="" class="s2" target="_blank">ابحث عن مستقل</a>
+                                    <a href="" class="s3" target="_blank">الخدمات</a>
+                                    <a href="" class="s4" target="_blank">الوظائف</a>
+                                    <a href="" class="s5" target="_blank">الفرق</a>
+                                </div>
+                                <div class="p2">
+                                    <p class="s1">للمستقلين</p>
+                                    <a href="" class="s2" target="_blank">أنشئ ملفك</a>
+                                    <a href="" class="s3" target="_blank">كيف تقدّم عرضاً</a>
+                                    <a href="" class="s4" target="_blank">التوثيق</a>
+                                    <a href="" class="s5" target="_blank">أضف خدمة</a>
+                                </div>
+                                <div class="p3">
+                                    <p class="s1">حِرفة</p>
+                                    <a href="" class="s2" target="_blank">من نحن</a>
+                                    <a href="" class="s3" target="_blank">الأسئلة الشائعة</a>
+                                    <a href="" class="s4" target="_blank">تواصل معنا</a>
+                                    <a href="" class="s5" target="_blank">الشروط والخصوصية</a>
+                                </div>
+                                <div class="p4">
+                                    <p class="s1">الدعم الفني</p>
+                                    <a href="https://web.whatsapp.com/" target="_blank" class="s2">
+                                        <img src="image/whats.png" alt="">
+                                        <p>واتساب</p>
+                                    </a>
+                                    <a href="" class="s3" target="_blank">للمساعدة والاستفسارات</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div2">
+                            <p class="m1">&copy; 2026 حِرفة. جميع الحقوق محفوظة.</p>
+                            <p class="m2">حرفتك تصنع فرصتك.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </main>
+
+
+
+        <!-- ملف الجافا سكريبت الأساسي للموقع -->
+        <script src="js/script.js"></script>
+        <!-- مكتبة بوتستراب 5 للأجزاء التفاعلية مثل القوائم والنوافذ -->
+        <script src="js/Bootstrapvarsio5.js"></script>
+        <!-- ملف الأكواد والتخصيصات الخاصة بي -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
