@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>حِرفة</title>
+        <!-- ضبط الوضع الليلي مبكراً قبل ظهور الصفحة -->
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <link rel="stylesheet" href="css/brands.min.css"/>
+        <link rel="stylesheet" href="css/fontawesome.min.css"/>
+        <!--  استدعاء ملف البوتوستراب  -->
+        <link href="css/Bootstrapvarsio5.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- ملفات الاتصال المسبق بخطوط قوقل وأيقونة الموقع -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="image/Logo Mark.png" type="images/x-icon">
+    </head>
+    <body>
+        <main>
+            
+        </main>
+
+
+
+
+
+
+        <!-- ملف الجافا سكريبت الأساسي للموقع -->
+        <script src="js/script.js"></script>
+        <!-- مكتبة بوتستراب 5 للأجزاء التفاعلية مثل القوائم والنوافذ -->
+        <script src="js/Bootstrapvarsio5.js"></script>
+        <!-- ملف الأكواد والتخصيصات الخاصة بي -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
