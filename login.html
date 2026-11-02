@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>تسجيل الدخول | حِرفة</title>
+        <!-- ضبط الوضع الليلي مبكراً قبل ظهور الصفحة -->
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <link rel="stylesheet" href="css/brands.min.css"/>
+        <link rel="stylesheet" href="css/fontawesome.min.css"/>
+        <!--  استدعاء ملف البوتوستراب  -->
+        <link href="css/Bootstrapvarsio5.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- ملفات الاتصال المسبق بخطوط قوقل وأيقونة الموقع -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="image/Logo Mark.png" type="images/x-icon">
+    </head>
+    <body class="auth">
+        <main>
+            <!-- start login -->
+            <section class="login">
+                <div class="all">
+                    <div class="div1">
+                        <button type="button" class="m1" id="themeToggle" aria-label="تبديل الوضع الليلي"><i class="fa-regular fa-moon"></i></button>
+                        <form class="m2" action="#" method="post">
+                            <p class="p1">أهلاً من جديد</p>
+                            <p class="p2">سجّل دخولك لمتابعة مشاريعك وعروضك.</p>
+                            <div class="p3">
+                                <label for="email" class="s1">البريد الإلكتروني</label>
+                                <div class="s2">
+                                    <i class="fa-regular fa-envelope a1"></i>
+                                    <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required>
+                                </div>
+                            </div>
+                            <div class="p4">
+                                <label for="password" class="s1">كلمة المرور</label>
+                                <div class="s2">
+                                    <i class="fa-solid fa-lock a1"></i>
+                                    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
+                                    <button type="button" class="a2" id="showPassword" aria-label="إظهار كلمة المرور"><i class="fa-regular fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="p5">
+                                <label class="s1">
+                                    <input type="checkbox" checked>
+                                    <span>تذكرني</span>
+                                </label>
+                                <a href="#" class="s2">نسيت كلمة المرور؟</a>
+                            </div>
+                            <button type="submit" class="p6">تسجيل الدخول</button>
+                            <div class="p7"><span>أو</span></div>
+                            <button type="button" class="p8">المتابعة باستخدام Google</button>
+                            <p class="p9">ليس لديك حساب؟ <a href="#">أنشئ حساباً مجاناً</a></p>
+                        </form>
+                    </div>
+                    <div class="div2">
+                        <div class="m4">
+                            <div class="s1"></div>
+                            <div class="s2"></div>
+                            <div class="s3"></div>
+                            <div class="s4"></div>
+                        </div>
+                        <a href="index.html" class="m1">
+                            <img src="image/Logo Mark.png" alt="">
+                            <p>حِرفة</p>
+                        </a>
+                        <div class="m2">
+                            <p class="p1">اعرض حرفتك، <span>واكسب فرصتك.</span></p>
+                            <p class="p2">آلاف المشاريع تنتظر مستقلين موثّقين. سجّل مجاناً وابدأ خلال دقائق.</p>
+                        </div>
+                        <div class="m3">
+                            <p class="p1">«حصلت على أول مشروع خلال أسبوع من التسجيل، والدفع كان محجوزاً ومضموناً حتى التسليم.»</p>
+                            <div class="p2">
+                                <p class="s1">س</p>
+                                <div class="s2">
+                                    <p class="a1">سارة الأحمد</p>
+                                    <p class="a2">كاتبة محتوى · الرياض</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end login -->
+        </main>
+
+
+
+        <!-- ملف الجافا سكريبت الأساسي للموقع -->
+        <script src="js/script.js"></script>
+        <!-- مكتبة بوتستراب 5 للأجزاء التفاعلية مثل القوائم والنوافذ -->
+        <script src="js/Bootstrapvarsio5.js"></script>
+        <!-- ملف الأكواد والتخصيصات الخاصة بي -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
