@@ -5463,6 +5463,244 @@ body.auth {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.register .all .div1 .m3 {
+  width: 100%;
+  max-width: 448px;
+  display: flex;
+  flex-direction: column;
+}
+.register .all .div1 .m3 .p1 {
+  font-weight: 800;
+  font-size: 44px;
+  color: #111827;
+}
+.register .all .div1 .m3 .p2 {
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+.register .all .div1 .m3 .p3 .s1, .register .all .div1 .m3 .p3 .s2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 20px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #E6E8F2;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.register .all .div1 .m3 .p3 .s1:hover, .register .all .div1 .m3 .p3 .s2:hover {
+  border-color: #C7CCFF;
+}
+.register .all .div1 .m3 .p3 .s1 input, .register .all .div1 .m3 .p3 .s2 input {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #4F46E5;
+  cursor: pointer;
+}
+.register .all .div1 .m3 .p3 .s1 .a1, .register .all .div1 .m3 .p3 .s2 .a1 {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background-color: #EEF0FF;
+}
+.register .all .div1 .m3 .p3 .s1 .a1 i, .register .all .div1 .m3 .p3 .s2 .a1 i {
+  font-size: 20px;
+  color: #4F46E5;
+}
+.register .all .div1 .m3 .p3 .s1 .a2, .register .all .div1 .m3 .p3 .s2 .a2 {
+  margin-top: 12px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #111827;
+}
+.register .all .div1 .m3 .p3 .s1 .a3, .register .all .div1 .m3 .p3 .s2 .a3 {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p3 .s1:has(input:checked), .register .all .div1 .m3 .p3 .s2:has(input:checked) {
+  background-color: #EEF0FF;
+  border-color: #4F46E5;
+  box-shadow: 0 8px 20px 0 rgba(79, 70, 229, 0.12);
+}
+.register .all .div1 .m3 .p3 .s2 .a1 {
+  background-color: #E6F6F4;
+}
+.register .all .div1 .m3 .p3 .s2 .a1 i {
+  color: #0D9488;
+}
+.register .all .div1 .m3 .p4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+.register .all .div1 .m3 .p4 .s1 .a1, .register .all .div1 .m3 .p4 .s2 .a1 {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #111827;
+}
+.register .all .div1 .m3 .p4 .s1 .a2, .register .all .div1 .m3 .p4 .s2 .a2 {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #E6E8F2;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.register .all .div1 .m3 .p4 .s1 .a2::-moz-placeholder, .register .all .div1 .m3 .p4 .s2 .a2::-moz-placeholder {
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p4 .s1 .a2::placeholder, .register .all .div1 .m3 .p4 .s2 .a2::placeholder {
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p4 .s1 .a2:focus, .register .all .div1 .m3 .p4 .s2 .a2:focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+.register .all .div1 .m3 .p5, .register .all .div1 .m3 .p6, .register .all .div1 .m3 .p7 {
+  margin-top: 22px;
+}
+.register .all .div1 .m3 .p5 .s1, .register .all .div1 .m3 .p6 .s1, .register .all .div1 .m3 .p7 .s1 {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #111827;
+}
+.register .all .div1 .m3 .p5 .s2, .register .all .div1 .m3 .p6 .s2, .register .all .div1 .m3 .p7 .s2 {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 1px solid #E6E8F2;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.register .all .div1 .m3 .p5 .s2:focus-within, .register .all .div1 .m3 .p6 .s2:focus-within, .register .all .div1 .m3 .p7 .s2:focus-within {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+.register .all .div1 .m3 .p5 .s2 .a1, .register .all .div1 .m3 .p6 .s2 .a1, .register .all .div1 .m3 .p7 .s2 .a1 {
+  font-size: 16px;
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p5 .s2 input, .register .all .div1 .m3 .p5 .s2 select, .register .all .div1 .m3 .p6 .s2 input, .register .all .div1 .m3 .p6 .s2 select, .register .all .div1 .m3 .p7 .s2 input, .register .all .div1 .m3 .p7 .s2 select {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  font-size: 15px;
+  color: #111827;
+}
+.register .all .div1 .m3 .p5 .s2 input::-moz-placeholder, .register .all .div1 .m3 .p5 .s2 select::-moz-placeholder, .register .all .div1 .m3 .p6 .s2 input::-moz-placeholder, .register .all .div1 .m3 .p6 .s2 select::-moz-placeholder, .register .all .div1 .m3 .p7 .s2 input::-moz-placeholder, .register .all .div1 .m3 .p7 .s2 select::-moz-placeholder {
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p5 .s2 input::placeholder, .register .all .div1 .m3 .p5 .s2 select::placeholder, .register .all .div1 .m3 .p6 .s2 input::placeholder, .register .all .div1 .m3 .p6 .s2 select::placeholder, .register .all .div1 .m3 .p7 .s2 input::placeholder, .register .all .div1 .m3 .p7 .s2 select::placeholder {
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p5 .s2 select, .register .all .div1 .m3 .p6 .s2 select, .register .all .div1 .m3 .p7 .s2 select {
+  cursor: pointer;
+}
+.register .all .div1 .m3 .p5 .s2 .a2, .register .all .div1 .m3 .p6 .s2 .a2, .register .all .div1 .m3 .p7 .s2 .a2 {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+.register .all .div1 .m3 .p5 .s2 .a2 i, .register .all .div1 .m3 .p6 .s2 .a2 i, .register .all .div1 .m3 .p7 .s2 .a2 i {
+  font-size: 16px;
+  color: #6B7280;
+  transition: color 0.2s ease;
+}
+.register .all .div1 .m3 .p5 .s2 .a2:hover i, .register .all .div1 .m3 .p6 .s2 .a2:hover i, .register .all .div1 .m3 .p7 .s2 .a2:hover i {
+  color: #4F46E5;
+}
+.register .all .div1 .m3 .p5 .s3, .register .all .div1 .m3 .p6 .s3, .register .all .div1 .m3 .p7 .s3 {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p5 .s2 input {
+  direction: ltr;
+  text-align: right;
+}
+.register .all .div1 .m3 .p8 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+}
+.register .all .div1 .m3 .p8 input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #4F46E5;
+  cursor: pointer;
+}
+.register .all .div1 .m3 .p8 a {
+  color: #4F46E5;
+}
+.register .all .div1 .m3 .p8 a:hover {
+  text-decoration: underline;
+}
+.register .all .div1 .m3 .p9 {
+  height: 48px;
+  margin-top: 24px;
+  border: 0;
+  border-radius: 30px;
+  background-color: #4F46E5;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px 0 rgba(79, 70, 229, 0.3019607843);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.register .all .div1 .m3 .p9:hover {
+  background-color: #6366F1;
+  box-shadow: 0 12px 28px 0 rgba(79, 70, 229, 0.45);
+  transform: translateY(-2px);
+}
+.register .all .div1 .m3 .p10 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #6B7280;
+}
+.register .all .div1 .m3 .p10 a {
+  font-weight: 600;
+  color: #4F46E5;
+}
+.register .all .div1 .m3 .p10 a:hover {
+  text-decoration: underline;
+}
+
 @keyframes randomMove {
   0% {
     transform: translate(0, 0) scale(1);
@@ -6509,6 +6747,40 @@ body {
   }
 }
 
+@media (max-width: 767.98px) {
+  .register .all .div1 .m3 .p1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 575.98px) {
+  .register .all .div1 .m3 .p1 {
+    font-size: 30px;
+  }
+  .register .all .div1 .m3 .p3 {
+    gap: 10px;
+  }
+  .register .all .div1 .m3 .p3 .s1, .register .all .div1 .m3 .p3 .s2 {
+    padding: 14px 14px 16px;
+  }
+  .register .all .div1 .m3 .p3 .s1 input, .register .all .div1 .m3 .p3 .s2 input {
+    top: 14px;
+    left: 14px;
+  }
+  .register .all .div1 .m3 .p3 .s1 .a1, .register .all .div1 .m3 .p3 .s2 .a1 {
+    width: 44px;
+    height: 44px;
+  }
+  .register .all .div1 .m3 .p3 .s1 .a2, .register .all .div1 .m3 .p3 .s2 .a2 {
+    font-size: 16px;
+  }
+  .register .all .div1 .m3 .p3 .s1 .a3, .register .all .div1 .m3 .p3 .s2 .a3 {
+    font-size: 12px;
+  }
+  .register .all .div1 .m3 .p8 {
+    font-size: 14px;
+  }
+}
+
 body, nav, section, footer {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
@@ -7386,4 +7658,98 @@ html[data-theme=dark] .login .all .div1 .m2 .p9 a {
 }
 html[data-theme=dark] .login .all .div2 {
   background: linear-gradient(150deg, #3730A3 0%, #1E1B4B 55%, #10132A 100%);
+}
+
+html[data-theme=dark] .register .all .div1 .m3 .p1 {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p2 {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 {
+  background-color: #161A33;
+  border-color: #262B4D;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1:hover, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2:hover {
+  border-color: #2E346B;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1 .a1, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a1 {
+  background-color: #232853;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1 .a1 i, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a1 i {
+  color: #818CF8;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1 .a2, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a2 {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1 .a3, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a3 {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1:has(input:checked), html[data-theme=dark] .register .all .div1 .m3 .p3 .s2:has(input:checked) {
+  background-color: #232853;
+  border-color: #818CF8;
+  box-shadow: none;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s1:has(input:checked) .a1, html[data-theme=dark] .register .all .div1 .m3 .p3 .s2:has(input:checked) .a1 {
+  background-color: #2E346B;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a1 {
+  background-color: rgba(45, 212, 191, 0.12);
+}
+html[data-theme=dark] .register .all .div1 .m3 .p3 .s2 .a1 i {
+  color: #2DD4BF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p4 .s1 .a1, html[data-theme=dark] .register .all .div1 .m3 .p4 .s2 .a1 {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p4 .s1 .a2, html[data-theme=dark] .register .all .div1 .m3 .p4 .s2 .a2 {
+  background-color: #161A33;
+  border-color: #262B4D;
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p4 .s1 .a2::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p4 .s2 .a2::-moz-placeholder {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p4 .s1 .a2::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p4 .s2 .a2::placeholder {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s1, html[data-theme=dark] .register .all .div1 .m3 .p6 .s1, html[data-theme=dark] .register .all .div1 .m3 .p7 .s1 {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 {
+  background-color: #161A33;
+  border-color: #262B4D;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 .a1, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 .a1, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 .a1 {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 input, html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 select, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 input, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 select, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 input, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 select {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 input::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 select::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 input::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 select::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 input::-moz-placeholder, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 select::-moz-placeholder {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 input::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 select::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 input::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 select::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 input::placeholder, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 select::placeholder {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 select option, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 select option, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 select option {
+  background-color: #161A33;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s2 .a2 i, html[data-theme=dark] .register .all .div1 .m3 .p6 .s2 .a2 i, html[data-theme=dark] .register .all .div1 .m3 .p7 .s2 .a2 i {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p5 .s3, html[data-theme=dark] .register .all .div1 .m3 .p6 .s3, html[data-theme=dark] .register .all .div1 .m3 .p7 .s3 {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p8 {
+  color: #F3F4F6;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p8 a {
+  color: #818CF8;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p10 {
+  color: #9CA3AF;
+}
+html[data-theme=dark] .register .all .div1 .m3 .p10 a {
+  color: #818CF8;
 }/*# sourceMappingURL=style.css.map */
