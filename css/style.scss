@@ -6745,7 +6745,6 @@ footer .container .all {
 
 
 // ======register.html :: responsive======
-//register (اللوحة البنفسجية تأخذ الرسبونسيف من login)
 .register .all .div1 .m3 {
     @include down($bp-md) {
         .p1 { font-size: 34px; }
