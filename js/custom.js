@@ -26,6 +26,48 @@ window.addEventListener('load', function() {
         splash.classList.add('fade-out');
     }, 2000);
 });
+// خاص للنافبار
+(function () {
+    var links = document.querySelectorAll('nav .navbar-nav .nav-link');
+    if (!links.length) return;
+
+    // اسم الصفحة الحالية (index.html إذا كان الرابط بدون اسم ملف)
+    function fileOf(path) {
+        return path.split('/').pop() || 'index.html';
+    }
+    var page = document.body.dataset.nav || fileOf(location.pathname);
+
+    // يزيل اللون من الكل ويضعه على رابط واحد
+    function setActive(link) {
+        links.forEach(function (l) {
+            l.classList.remove('active');
+            l.removeAttribute('aria-current');
+        });
+        if (link) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    }
+
+    var current = null;
+    links.forEach(function (link) {
+        var url = new URL(link.getAttribute('href'), location.href);
+        var file = fileOf(url.pathname);
+        var samePage = file === fileOf(location.pathname);
+
+        // رابط لصفحة كاملة (بدون #) يطابق الصفحة الحالية
+        if (file === page && !url.hash) current = link;
+        // فتحنا الصفحة على قسم معيّن (مثلاً index.html#search)
+        if (samePage && url.hash && url.hash === location.hash) current = link;
+
+        // الضغط على رابط قسم في نفس الصفحة: يتلوّن فوراً
+        link.addEventListener('click', function () {
+            if (samePage && url.hash) setActive(link);
+        });
+    });
+
+    setActive(current);
+})();
 //  theme.js — زر تبديل الوضع الليلي/النهاري لموقع حِرفة
 (function () {
     const root = document.documentElement;
