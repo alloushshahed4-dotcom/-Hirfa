@@ -5605,6 +5605,250 @@ body.auth {
 }
 // end login
 // ======login.html :: end======
+// ======register.html :: start======
+// start register
+.register {
+    .all {
+        .div1 {
+            .m3 {
+                width: 100%;
+                max-width: 448px;
+                display: flex;
+                flex-direction: column;
+                .p1 {
+                    font-weight: 800;
+                    font-size: 44px;
+                    color: #111827;
+                }
+                .p2 {
+                    margin-top: 2px;
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: #6B7280;
+                }
+                .p3 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                    margin-top: 24px;
+                    .s1, .s2 {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 18px 18px 20px;
+                        background-color: #FFFFFF;
+                        border: 1.5px solid #E6E8F2;
+                        border-radius: 16px;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+                        &:hover {
+                            border-color: #C7CCFF;
+                        }
+                        input {
+                            position: absolute;
+                            top: 18px;
+                            left: 18px;
+                            width: 18px;
+                            height: 18px;
+                            margin: 0;
+                            accent-color: #4F46E5;
+                            cursor: pointer;
+                        }
+                        .a1 {
+                            width: 52px;
+                            height: 52px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 14px;
+                            background-color: #EEF0FF;
+                            i {
+                                font-size: 20px;
+                                color: #4F46E5;
+                            }
+                        }
+                        .a2 {
+                            margin-top: 12px;
+                            font-weight: 800;
+                            font-size: 18px;
+                            color: #111827;
+                        }
+                        .a3 {
+                            margin-top: 2px;
+                            font-size: 13px;
+                            color: #6B7280;
+                        }
+                        // البطاقة المختارة
+                        &:has(input:checked) {
+                            background-color: #EEF0FF;
+                            border-color: #4F46E5;
+                            box-shadow: 0 8px 20px 0 rgba(79, 70, 229, 0.12);
+                        }
+                    }
+                    .s2 .a1 {
+                        background-color: #E6F6F4;
+                        i {
+                            color: #0D9488;
+                        }
+                    }
+                }
+                .p4 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                    margin-top: 22px;
+                    .s1, .s2 {
+                        .a1 {
+                            display: block;
+                            margin-bottom: 8px;
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: #111827;
+                        }
+                        .a2 {
+                            width: 100%;
+                            height: 52px;
+                            padding: 0 16px;
+                            border: 1px solid #E6E8F2;
+                            border-radius: 14px;
+                            background-color: #FFFFFF;
+                            font-size: 15px;
+                            color: #111827;
+                            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                            &::placeholder {
+                                color: #6B7280;
+                            }
+                            &:focus {
+                                border-color: #4F46E5;
+                                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+                            }
+                        }
+                    }
+                }
+                .p5, .p6, .p7 {
+                    margin-top: 22px;
+                    .s1 {
+                        display: block;
+                        margin-bottom: 8px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: #111827;
+                    }
+                    .s2 {
+                        height: 52px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding: 0 16px;
+                        border: 1px solid #E6E8F2;
+                        border-radius: 14px;
+                        background-color: #FFFFFF;
+                        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                        &:focus-within {
+                            border-color: #4F46E5;
+                            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+                        }
+                        .a1 {
+                            font-size: 16px;
+                            color: #6B7280;
+                        }
+                        input, select {
+                            flex: 1;
+                            min-width: 0;
+                            height: 100%;
+                            border: 0;
+                            background: transparent;
+                            font-size: 15px;
+                            color: #111827;
+                            &::placeholder {
+                                color: #6B7280;
+                            }
+                        }
+                        select {
+                            cursor: pointer;
+                        }
+                        .a2 {
+                            border: 0;
+                            background: transparent;
+                            padding: 0;
+                            i {
+                                font-size: 16px;
+                                color: #6B7280;
+                                transition: color 0.2s ease;
+                            }
+                            &:hover i {
+                                color: #4F46E5;
+                            }
+                        }
+                    }
+                    .s3 {
+                        margin-top: 8px;
+                        font-size: 12px;
+                        color: #6B7280;
+                    }
+                }
+                .p5 .s2 input {
+                    direction: ltr;      
+                    text-align: right;
+                }
+                .p8 {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 22px;
+                    font-size: 15px;
+                    color: #111827;
+                    cursor: pointer;
+                    input {
+                        width: 18px;
+                        height: 18px;
+                        flex-shrink: 0;
+                        accent-color: #4F46E5;
+                        cursor: pointer;
+                    }
+                    a {
+                        color: #4F46E5;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .p9 {
+                    height: 48px;
+                    margin-top: 24px;
+                    border: 0;
+                    border-radius: 30px;
+                    background-color: #4F46E5;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    box-shadow: 0 10px 24px 0 #4F46E54D;
+                    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+                    &:hover {
+                        background-color: #6366F1;
+                        box-shadow: 0 12px 28px 0 rgba(79, 70, 229, 0.45);
+                        transform: translateY(-2px);
+                    }
+                }
+                .p10 {
+                    margin-top: 20px;
+                    text-align: center;
+                    font-size: 15px;
+                    color: #6B7280;
+                    a {
+                        font-weight: 600;
+                        color: #4F46E5;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// end register
+// ======register.html :: end======
 
 // أنيميشن دوران الدائرة
 @keyframes randomMove {
@@ -6500,6 +6744,31 @@ footer .container .all {
 }
 
 
+// ======register.html :: responsive======
+//register (اللوحة البنفسجية تأخذ الرسبونسيف من login)
+.register .all .div1 .m3 {
+    @include down($bp-md) {
+        .p1 { font-size: 34px; }
+    }
+
+    @include down($bp-sm) {
+        .p1 { font-size: 30px; }
+        .p3 {
+            gap: 10px;
+            .s1, .s2 {
+                padding: 14px 14px 16px;
+                input { top: 14px; left: 14px; }
+                .a1 { width: 44px; height: 44px; }
+                .a2 { font-size: 16px; }
+                .a3 { font-size: 12px; }
+            }
+        }
+        .p8 { font-size: 14px; }
+    }
+
+}
+
+
 // ===== Dark Mode =====
 // ---------- لوحة ألوان الوضع الليلي ----------
 $d-bg:        #0B0D17;   // خلفية الصفحة        (بدل #FFFFFF)
@@ -7192,6 +7461,66 @@ html[data-theme="dark"] {
         }
         .div2 {
             background: linear-gradient(150deg, #3730A3 0%, #1E1B4B 55%, #10132A 100%);
+        }
+    }
+}
+
+// ======register.html :: dark mode======
+html[data-theme="dark"] {
+    .register .all .div1 .m3 {
+        .p1 { color: $d-text; }
+        .p2 { color: $d-muted; }
+        .p3 {
+            .s1, .s2 {
+                background-color: $d-card;
+                border-color: $d-border;
+                &:hover { border-color: $d-chip-hover; }
+                .a1 { background-color: $d-chip; i { color: $d-accent; } }
+                .a2 { color: $d-text; }
+                .a3 { color: $d-muted; }
+                &:has(input:checked) {
+                    background-color: $d-chip;
+                    border-color: $d-accent;
+                    box-shadow: none;
+                    .a1 { background-color: $d-chip-hover; }
+                }
+            }
+            .s2 .a1 {
+                background-color: rgba(45, 212, 191, 0.12);
+                i { color: $d-teal; }
+            }
+        }
+        .p4 .s1, .p4 .s2 {
+            .a1 { color: $d-text; }
+            .a2 {
+                background-color: $d-card;
+                border-color: $d-border;
+                color: $d-text;
+                &::placeholder { color: $d-muted; }
+            }
+        }
+        .p5, .p6, .p7 {
+            .s1 { color: $d-text; }
+            .s2 {
+                background-color: $d-card;
+                border-color: $d-border;
+                .a1 { color: $d-muted; }
+                input, select {
+                    color: $d-text;
+                    &::placeholder { color: $d-muted; }
+                }
+                select option { background-color: $d-card; }
+                .a2 i { color: $d-muted; }
+            }
+            .s3 { color: $d-muted; }
+        }
+        .p8 {
+            color: $d-text;
+            a { color: $d-accent; }
+        }
+        .p10 {
+            color: $d-muted;
+            a { color: $d-accent; }
         }
     }
 }
