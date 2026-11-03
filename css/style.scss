@@ -117,6 +117,10 @@ nav {
     }
 }
 // end nav
+// رابط الصفحة الحالية في النافبار (يضيفه nav.js)
+nav .container .collapse ul li a.active {
+    color: #4F46E5;
+}
 // start about
 .about {
     background-color: #F7F8FD;
@@ -5849,6 +5853,517 @@ body.auth {
 }
 // end register
 // ======register.html :: end======
+// ======job_details.html :: start======
+// start headline
+.headline {
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 48px;
+            padding-bottom: 40px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                a {
+                    color: #6B7280;
+                    transition: color 0.2s ease;
+                    &:hover {
+                        color: #4F46E5;
+                    }
+                }
+                .s1 {
+                    color: #6B7280;
+                }
+                .s2 {
+                    color: #111827;
+                }
+            }
+            .div2 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 24px;
+                margin-top: 12px;
+                .m1 {
+                    min-width: 0;
+                    .p1 {
+                        font-weight: 800;
+                        font-size: 44px;
+                        line-height: 1.4;
+                        color: #111827;
+                    }
+                    .p2 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        gap: 8px 10px;
+                        margin-top: 10px;
+                        .s1, .s2 {
+                            padding: 3px 12px;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            font-size: 13px;
+                        }
+                        .s1 {
+                            background-color: #EEF0FF;
+                            color: #3730A3;
+                        }
+                        .s2 {
+                            background-color: #E6F6F4;
+                            color: #0D9488;
+                        }
+                        .s3 {
+                            font-size: 13px;
+                            color: #6B7280;
+                        }
+                    }
+                }
+                .m2 {
+                    display: flex;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    .p1, .p2 {
+                        height: 36px;
+                        padding: 0 16px;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        border: 1.5px solid #111827;
+                        border-radius: 30px;
+                        background-color: transparent;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: #111827;
+                        transition: background-color 0.2s ease, color 0.2s ease;
+                        i {
+                            font-size: 12px;
+                        }
+                        &:hover {
+                            background-color: #111827;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// end headline
+// start details
+.details {
+    position: relative;
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 24px;
+            padding-bottom: 96px;
+            display: grid;
+            grid-template-columns: 1fr 358px;
+            align-items: start;
+            gap: 24px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                // تفاصيل المشروع
+                .m1 {
+                    padding: 32px 28px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                    .p1 {
+                        font-weight: 800;
+                        font-size: 20px;
+                        color: #111827;
+                    }
+                    .p2 {
+                        margin-top: 14px;
+                        font-size: 18px;
+                        line-height: 1.85;
+                        color: #6B7280;
+                    }
+                    .p3, .p5, .p7 {
+                        margin-top: 22px;
+                        font-weight: 700;
+                        font-size: 15px;
+                        color: #111827;
+                    }
+                    .p4 {
+                        margin: 14px 0 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        li {
+                            position: relative;
+                            padding-right: 14px;
+                            font-size: 15px;
+                            color: #111827;
+                            // المربع الصغير قبل كل سطر
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                right: 0;
+                                top: 0.7em;
+                                width: 5px;
+                                height: 5px;
+                                background-color: #111827;
+                            }
+                        }
+                    }
+                    .p6 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                        margin-top: 14px;
+                        .s1, .s2, .s3, .s4, .s5 {
+                            padding: 4px 12px;
+                            background-color: #EEF0FF;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            font-size: 12px;
+                            color: #111827;
+                            transition: background-color 0.2s ease, transform 0.2s ease;
+                            &:hover {
+                                background-color: #E0E7FF;
+                                transform: translateY(-2px);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .p8 {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-top: 14px;
+                        padding: 10px 16px;
+                        background-color: #F7F8FD;
+                        border: 1px solid #E6E8F2;
+                        border-radius: 12px;
+                        transition: border-color 0.2s ease;
+                        &:hover {
+                            border-color: #4F46E5;
+                        }
+                        i {
+                            font-size: 14px;
+                            color: #4F46E5;
+                        }
+                        .s1 {
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: #111827;
+                        }
+                        .s2 {
+                            font-size: 12px;
+                            color: #6B7280;
+                            direction: ltr;       // حتى يظهر 1.2 MB وليس MB 1.2
+                            unicode-bidi: isolate;
+                        }
+                    }
+                }
+                // العروض المقدّمة
+                .m2 {
+                    padding: 24px 28px 8px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                    .p1 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 12px;
+                        padding-bottom: 16px;
+                        border-bottom: 1px solid #E6E8F2;
+                        .s1 {
+                            font-weight: 800;
+                            font-size: 18px;
+                            color: #111827;
+                        }
+                        .s2 {
+                            font-size: 13px;
+                            color: #6B7280;
+                            span {
+                                direction: ltr;
+                                unicode-bidi: isolate;
+                            }
+                        }
+                    }
+                    .p2, .p3, .p4 {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px 0;
+                        .s1 {
+                            width: 44px;
+                            height: 44px;
+                            flex-shrink: 0;
+                            border-radius: 50%;
+                            background: linear-gradient(to bottom, #8B85FF, #4F46E5);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 700;
+                            font-size: 16px;
+                            color: #FFFFFF;
+                        }
+                        .s2 {
+                            flex: 1;
+                            min-width: 0;
+                            .a1 {
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                                p {
+                                    font-weight: 700;
+                                    font-size: 15px;
+                                    color: #111827;
+                                }
+                                i {
+                                    font-size: 14px;
+                                    color: #0D9488;
+                                }
+                            }
+                            .a2 {
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                i {
+                                    font-size: 12px;
+                                    color: #F59E0B;
+                                }
+                                p {
+                                    font-size: 13px;
+                                    color: #6B7280;
+                                    span {
+                                        font-weight: 700;
+                                        color: #111827;
+                                    }
+                                }
+                            }
+                        }
+                        .s3 {
+                            text-align: left;
+                            .a1 {
+                                font-weight: 800;
+                                font-size: 17px;
+                                color: #111827;
+                            }
+                            .a2 {
+                                font-size: 13px;
+                                color: #6B7280;
+                            }
+                        }
+                    }
+                    .p3, .p4 {
+                        border-top: 1px solid #E6E8F2;
+                    }
+                    .p3 .s1 {
+                        background: linear-gradient(to bottom, #3B3880, #1E1B4B);
+                    }
+                    .p4 .s1 {
+                        background: linear-gradient(to bottom, #5EC9BC, #0D9488);
+                    }
+                }
+            }
+            .div2 {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                position: sticky;
+                top: 92px;
+                .m1, .m2 {
+                    padding: 24px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                }
+                // الميزانية
+                .m1 {
+                    .p1 {
+                        font-size: 13px;
+                        color: #6B7280;
+                    }
+                    .p2 {
+                        margin-top: 8px;
+                        padding-bottom: 18px;
+                        border-bottom: 1px solid #E6E8F2;
+                        font-weight: 800;
+                        font-size: 38px;
+                        color: #111827;
+                        direction: ltr;           // حتى يظهر $800 – $1,200 بالترتيب الصحيح
+                        text-align: right;
+                    }
+                    .p3, .p4, .p5, .p6 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 16px;
+                        .s1 {
+                            font-size: 14px;
+                            color: #6B7280;
+                        }
+                        .s2 {
+                            font-size: 14px;
+                            color: #111827;
+                        }
+                    }
+                    .p7, .p8 {
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 30px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
+                        &:hover {
+                            transform: translateY(-2px);
+                        }
+                    }
+                    .p7 {
+                        margin-top: 22px;
+                        background-color: #4F46E5;
+                        color: #FFFFFF;
+                        box-shadow: 0 10px 24px 0 #4F46E54D;
+                        &:hover {
+                            background-color: #6366F1;
+                            box-shadow: 0 12px 28px 0 rgba(79, 70, 229, 0.45);
+                        }
+                    }
+                    .p8 {
+                        margin-top: 14px;
+                        border: 1.5px solid #111827;
+                        color: #111827;
+                        &:hover {
+                            background-color: #111827;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+                // عن العميل
+                .m2 {
+                    .p1 {
+                        font-weight: 800;
+                        font-size: 18px;
+                        color: #111827;
+                    }
+                    .p2 {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        margin-top: 16px;
+                        .s1 {
+                            width: 48px;
+                            height: 48px;
+                            flex-shrink: 0;
+                            border-radius: 50%;
+                            background: linear-gradient(to bottom, #3B3880, #1E1B4B);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 700;
+                            font-size: 17px;
+                            color: #FFFFFF;
+                        }
+                        .s2 {
+                            .a1 {
+                                font-weight: 700;
+                                font-size: 15px;
+                                color: #111827;
+                            }
+                            .a2 {
+                                font-size: 13px;
+                                color: #6B7280;
+                            }
+                        }
+                    }
+                    .p3 {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        margin-top: 14px;
+                        padding-bottom: 18px;
+                        border-bottom: 1px solid #E6E8F2;
+                        i {
+                            font-size: 13px;
+                            color: #0D9488;
+                        }
+                        p {
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: #0D9488;
+                        }
+                    }
+                    .p4, .p5, .p6, .p7 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 16px;
+                        .s1 {
+                            font-size: 14px;
+                            color: #6B7280;
+                        }
+                        .s2 {
+                            font-size: 14px;
+                            color: #111827;
+                        }
+                    }
+                    .p8 {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        margin-top: 16px;
+                        i {
+                            font-size: 13px;
+                            color: #F59E0B;
+                        }
+                        p {
+                            font-weight: 700;
+                            font-size: 14px;
+                            color: #111827;
+                            span {
+                                font-weight: 400;
+                                font-size: 12px;
+                                color: #6B7280;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .whats {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 50;
+        width: 56px;
+        height: 56px;
+        transition: transform 0.2s ease;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+}
+// end details
+// ======job_details.html :: end======
 
 // أنيميشن دوران الدائرة
 @keyframes randomMove {
@@ -6768,6 +7283,79 @@ footer .container .all {
 }
 
 
+// ======job_details.html :: responsive======
+//headline
+.headline .container .all {
+    @include down($bp-lg) {
+        padding-top: 36px;
+        padding-bottom: 28px;
+        .div2 {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            .m1 .p1 { font-size: 34px; }
+        }
+    }
+
+    @include down($bp-sm) {
+        padding-top: 28px;
+        .div2 .m1 .p1 { font-size: 26px; }
+    }
+}
+//details
+.details .container .all {
+    @include down($bp-xl) {
+        grid-template-columns: 1fr 320px;
+    }
+
+    @include down($bp-lg) {
+        grid-template-columns: 1fr;
+        padding-top: 8px;
+        padding-bottom: 72px;
+        .div2 {
+            order: -1;                 // الميزانية وزر التقديم أولاً
+            position: static;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+        }
+    }
+
+    @include down($bp-md) {
+        padding-bottom: 64px;
+        .div1 {
+            .m1 {
+                padding: 24px 20px;
+                .p2 { font-size: 16px; }
+            }
+            .m2 { padding: 20px 20px 4px; }
+        }
+        .div2 {
+            grid-template-columns: 1fr;
+            .m1 .p2 { font-size: 32px; }
+        }
+    }
+
+    @include down($bp-sm) {
+        .div1 {
+            .m1 .p8 {
+                display: flex;
+                .s1 { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+            }
+            .m2 .p1 { flex-wrap: wrap; gap: 4px; }
+        }
+    }
+}
+.details .whats {
+    @include down($bp-sm) {
+        width: 48px;
+        height: 48px;
+        left: 16px;
+        bottom: 16px;
+    }
+}
+
+
 // ===== Dark Mode =====
 // ---------- لوحة ألوان الوضع الليلي ----------
 $d-bg:        #0B0D17;   // خلفية الصفحة        (بدل #FFFFFF)
@@ -7521,5 +8109,129 @@ html[data-theme="dark"] {
             color: $d-muted;
             a { color: $d-accent; }
         }
+    }
+}
+
+// ======job_details.html :: dark mode======
+html[data-theme="dark"] {
+    // ================= العنوان =================
+    .headline {
+        background-color: $d-surface;
+        .container .all {
+            .div1 {
+                a { color: $d-muted; &:hover { color: $d-accent; } }
+                .s1 { color: $d-muted; }
+                .s2 { color: $d-text; }
+            }
+            .div2 {
+                .m1 {
+                    .p1 { color: $d-text; }
+                    .p2 {
+                        .s1 { background-color: $d-chip; color: $d-accent-2; }
+                        .s2 { background-color: rgba(45, 212, 191, 0.12); color: $d-teal; }
+                        .s3 { color: $d-muted; }
+                    }
+                }
+                .m2 .p1, .m2 .p2 {
+                    border-color: $d-text;
+                    color: $d-text;
+                    &:hover { background-color: $d-text; color: $d-bg; }
+                }
+            }
+        }
+    }
+
+    // ================= التفاصيل =================
+    .details {
+        background-color: $d-bg;
+        .container .all {
+            .div1 {
+                .m1, .m2 {
+                    background-color: $d-card;
+                    border-color: $d-border;
+                    box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                }
+                .m1 {
+                    .p1, .p3, .p5, .p7 { color: $d-text; }
+                    .p2 { color: $d-muted; }
+                    .p4 li {
+                        color: $d-text;
+                        &::before { background-color: $d-text; }
+                    }
+                    .p6 .s1, .p6 .s2, .p6 .s3, .p6 .s4, .p6 .s5 {
+                        background-color: $d-chip;
+                        color: $d-text;
+                        &:hover { background-color: $d-chip-hover; }
+                    }
+                    .p8 {
+                        background-color: $d-surface;
+                        border-color: $d-border;
+                        &:hover { border-color: $d-accent; }
+                        i { color: $d-accent; }
+                        .s1 { color: $d-text; }
+                        .s2 { color: $d-muted; }
+                    }
+                }
+                .m2 {
+                    .p1 {
+                        border-color: $d-border;
+                        .s1 { color: $d-text; }
+                        .s2 { color: $d-muted; }
+                    }
+                    .p2, .p3, .p4 {
+                        .s2 {
+                            .a1 { p { color: $d-text; } i { color: $d-teal; } }
+                            .a2 p { color: $d-muted; span { color: $d-text; } }
+                        }
+                        .s3 {
+                            .a1 { color: $d-text; }
+                            .a2 { color: $d-muted; }
+                        }
+                    }
+                    .p3, .p4 { border-color: $d-border; }
+                }
+            }
+            .div2 {
+                .m1, .m2 {
+                    background-color: $d-card;
+                    border-color: $d-border;
+                    box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                }
+                .m1 {
+                    .p1 { color: $d-muted; }
+                    .p2 { color: $d-text; border-color: $d-border; }
+                    .p3, .p4, .p5, .p6 {
+                        .s1 { color: $d-muted; }
+                        .s2 { color: $d-text; }
+                    }
+                    .p8 {
+                        border-color: $d-text;
+                        color: $d-text;
+                        &:hover { background-color: $d-text; color: $d-bg; }
+                    }
+                }
+                .m2 {
+                    .p1 { color: $d-text; }
+                    .p2 .s2 {
+                        .a1 { color: $d-text; }
+                        .a2 { color: $d-muted; }
+                    }
+                    .p3 {
+                        border-color: $d-border;
+                        i, p { color: $d-teal; }
+                    }
+                    .p4, .p5, .p6, .p7 {
+                        .s1 { color: $d-muted; }
+                        .s2 { color: $d-text; }
+                    }
+                    .p8 p { color: $d-text; span { color: $d-muted; } }
+                }
+            }
+        }
+    }
+
+    // ================= النافبار: رابط الصفحة الحالية =================
+    nav .container .collapse ul li a.active {
+        color: $d-accent;
     }
 }
