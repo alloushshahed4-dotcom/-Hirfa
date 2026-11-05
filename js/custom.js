@@ -106,3 +106,118 @@ window.addEventListener('load', function() {
         btn.setAttribute('aria-label', show ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور');
     });
 })();
+// ======submit.html :: start======
+const proposal = document.querySelector('.proposal');
+if (proposal) {
+
+    // ---------- حساب صافي الأرباح ----------
+    const price = document.getElementById('price');
+    const offerValue = document.getElementById('offerValue');
+    const fee = document.getElementById('fee');
+    const net = document.getElementById('net');
+    const money = (n) => '$' + n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+
+    function updateEarnings() {
+        const value = Math.max(parseFloat(price.value) || 0, 0);
+        const commission = value * 0.10;              // عمولة المنصة 10%
+        offerValue.textContent = money(value);
+        fee.textContent = '-' + money(commission);
+        net.textContent = money(value - commission);
+    }
+    price.addEventListener('input', updateEarnings);
+    updateEarnings();
+
+    // ---------- عدّاد أحرف الرسالة ----------
+    const message = document.getElementById('message');
+    const count = document.getElementById('count');
+    message.addEventListener('input', () => {
+        count.textContent = message.value.length;
+    });
+
+    // ---------- مراحل التسليم ----------
+    const milestones = document.getElementById('milestones');
+    const addMilestone = document.getElementById('addMilestone');
+
+    function renumber() {
+        milestones.querySelectorAll('.a1 .b1').forEach((el, i) => {
+            el.textContent = i + 1;
+        });
+    }
+
+    addMilestone.addEventListener('click', () => {
+        const row = document.createElement('div');
+        row.className = 'a1';
+        row.innerHTML = `
+            <span class="b1"></span>
+            <input type="text" class="b2" placeholder="اسم المرحلة">
+            <input type="text" class="b3" placeholder="$0" inputmode="numeric">
+            <button type="button" class="b4" aria-label="حذف المرحلة"><i class="fa-regular fa-trash-can"></i></button>
+        `;
+        milestones.appendChild(row);
+        renumber();
+        row.querySelector('.b2').focus();
+    });
+
+    milestones.addEventListener('click', (e) => {
+        const del = e.target.closest('.b4');
+        if (del) {
+            del.closest('.a1').remove();
+            renumber();
+        }
+    });
+
+    // إضافة $ تلقائياً قبل المبلغ
+    milestones.addEventListener('blur', (e) => {
+        if (e.target.classList.contains('b3')) {
+            const n = e.target.value.replace(/[^\d.]/g, '');
+            e.target.value = n ? '$' + n : '';
+        }
+    }, true);
+
+    // ---------- المرفقات (سحب وإفلات) ----------
+    const dropZone = document.getElementById('dropZone');
+    const files = document.getElementById('files');
+    const fileList = document.getElementById('fileList');
+    const MAX_SIZE = 20 * 1024 * 1024;   // 20MB
+
+    function showFiles(list) {
+        fileList.innerHTML = '';
+        Array.from(list).forEach((file) => {
+            const li = document.createElement('li');
+            const name = document.createElement('span');
+            const size = document.createElement('span');
+            name.className = 'a1';
+            size.className = 'a2';
+            name.textContent = file.name;
+            if (file.size > MAX_SIZE) {
+                li.classList.add('error');
+                size.textContent = 'أكبر من 20MB';
+            } else {
+                size.textContent = (file.size / 1024 / 1024).toFixed(1) + ' MB';
+            }
+            li.append(name, size);
+            fileList.appendChild(li);
+        });
+    }
+
+    files.addEventListener('change', () => showFiles(files.files));
+
+    ['dragenter', 'dragover'].forEach((ev) => {
+        dropZone.addEventListener(ev, (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag');
+        });
+    });
+    ['dragleave', 'drop'].forEach((ev) => {
+        dropZone.addEventListener(ev, (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag');
+        });
+    });
+    dropZone.addEventListener('drop', (e) => {
+        files.files = e.dataTransfer.files;
+        showFiles(files.files);
+    });
+}
+// ======submit.html :: end======
+
