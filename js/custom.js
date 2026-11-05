@@ -220,4 +220,34 @@ if (proposal) {
     });
 }
 // ======submit.html :: end======
+// أي صورة فيها data-dark بيتغير مسارها لما تتحول للوضع الداكن
+const themeImages = document.querySelectorAll('img[data-dark]');
 
+function swapImages() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeImages.forEach((img) => {
+        const next = isDark ? img.dataset.dark : img.dataset.light;
+        if (img.getAttribute('src') !== next) {
+            img.src = next;
+        }
+    });
+}
+
+// إذا نسخة الداكن مش موجودة بمجلد image، نرجع للصورة العادية بدل ما تظهر مكسورة
+themeImages.forEach((img) => {
+    img.addEventListener('error', () => {
+        if (img.getAttribute('src') === img.dataset.dark) {
+            img.src = img.dataset.light;
+        }
+    });
+});
+
+// أول ما تفتح الصفحة
+swapImages();
+
+// كل ما يتغير data-theme على <html> (زر القمر) نبدّل الصور
+new MutationObserver(swapImages).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+});
+// ======تبديل الصور حسب الوضع :: end======
