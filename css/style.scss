@@ -6866,6 +6866,956 @@ body.auth {
 }
 // end proposal
 // ======submit.html :: end======
+// ======postjob.html :: start======
+// start publish
+.publish {
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 48px;
+            padding-bottom: 40px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                a {
+                    color: #6B7280;
+                    transition: color 0.2s ease;
+                    &:hover {
+                        color: #4F46E5;
+                    }
+                }
+                .s1 {
+                    color: #6B7280;
+                }
+                .s2 {
+                    color: #111827;
+                }
+            }
+            .div2 {
+                margin-top: 12px;
+                .p1 {
+                    font-weight: 800;
+                    font-size: 44px;
+                    line-height: 1.4;
+                    color: #111827;
+                }
+                .p2 {
+                    margin-top: 6px;
+                    font-weight: 400;
+                    font-size: 19px;
+                    color: #6B7280;
+                }
+            }
+            .div3 {
+                margin-top: 24px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                .m1, .m3, .m5 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    .s1 {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        font-size: 12px;
+                    }
+                    .s2 {
+                        font-size: 14px;
+                    }
+                }
+                // الخطوة المكتملة
+                .m1 {
+                    .s1 {
+                        background-color: #0D9488;
+                        color: #FFFFFF;
+                    }
+                    .s2 {
+                        color: #111827;
+                    }
+                }
+                // الخطوة الحالية
+                .m3 {
+                    .s1 {
+                        background-color: #4F46E5;
+                        color: #FFFFFF;
+                    }
+                    .s2 {
+                        font-weight: 600;
+                        color: #4F46E5;
+                    }
+                }
+                // الخطوة القادمة
+                .m5 {
+                    .s1 {
+                        border: 1px solid #E6E8F2;
+                        background-color: #FFFFFF;
+                        color: #6B7280;
+                    }
+                    .s2 {
+                        color: #6B7280;
+                    }
+                }
+                .m2, .m4 {
+                    width: 48px;
+                    height: 2px;
+                    border-radius: 2px;
+                }
+                .m2 {
+                    background-color: #0D9488;
+                }
+                .m4 {
+                    background-color: #E6E8F2;
+                }
+            }
+        }
+    }
+}
+// end publish
+// start project
+.project {
+    position: relative;
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 40px;
+            padding-bottom: 96px;
+            display: grid;
+            grid-template-columns: 1fr 358px;
+            align-items: start;
+            gap: 24px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                // الكروت الثلاثة
+                .m1, .m2, .m3 {
+                    padding: 32px 28px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                // الحقول المشتركة (عنوان صغير + خانة فيها أيقونة)
+                .m1 .p2 .s1, .m1 .p4 .s1,
+                .p3 label.a1, .p4 label.a1 {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                    font-size: 13px;
+                    color: #111827;
+                }
+                .m1 .p2 .s2,
+                .p3 .a2,
+                .m2 .p4 .a2 {
+                    height: 52px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 0 16px;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 14px;
+                    background-color: #FFFFFF;
+                    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                    &:focus-within {
+                        border-color: #4F46E5;
+                        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+                    }
+                    i {
+                        font-size: 15px;
+                        color: #6B7280;
+                    }
+                    input, select {
+                        flex: 1;
+                        min-width: 0;
+                        height: 100%;
+                        border: 0;
+                        outline: 0;
+                        background: transparent;
+                        font-family: inherit;
+                        font-size: 15px;
+                        color: #111827;
+                    }
+                    input[type="number"] {
+                        font-weight: 600;
+                        -moz-appearance: textfield;   // إخفاء أسهم الرقم
+                        appearance: textfield;
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+                    select {
+                        cursor: pointer;
+                    }
+                }
+                // 1. تفاصيل المشروع
+                .m1 {
+                    .p1 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 12px;
+                        .s1 {
+                            font-weight: 800;
+                            font-size: 20px;
+                            color: #111827;
+                        }
+                        .s2 {
+                            padding: 4px 12px;
+                            border-radius: 20px;
+                            background-color: #E6F6F4;
+                            font-weight: 600;
+                            font-size: 12px;
+                            color: #0D9488;
+                        }
+                    }
+                    .p3 {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 16px;
+                        .s2 .a2 i {
+                            font-size: 14px;
+                        }
+                    }
+                    .p4 {
+                        .s2 {
+                            display: block;
+                            width: 100%;
+                            min-height: 136px;
+                            padding: 16px;
+                            border: 1px solid #E6E8F2;
+                            border-radius: 14px;
+                            background-color: #FFFFFF;
+                            font-family: inherit;
+                            font-size: 15px;
+                            line-height: 1.8;
+                            color: #111827;
+                            resize: vertical;
+                            outline: 0;
+                            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                            &:focus {
+                                border-color: #4F46E5;
+                                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+                            }
+                        }
+                    }
+                }
+                // 2. الميزانية والمدة (الكرت الحالي)
+                .m2 {
+                    border: 1.5px solid #4F46E5;
+                    .p1 {
+                        font-weight: 800;
+                        font-size: 20px;
+                        color: #111827;
+                    }
+                    // نوع العقد
+                    .p2 {
+                        .s1 {
+                            margin-bottom: 14px;
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: #111827;
+                        }
+                        .s2 {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 16px;
+                            .a1, .a2 {
+                                display: flex;
+                                align-items: center;
+                                gap: 14px;
+                                padding: 18px 20px;
+                                border: 1px solid #E6E8F2;
+                                border-radius: 16px;
+                                background-color: #FFFFFF;
+                                cursor: pointer;
+                                transition: border-color 0.2s ease, background-color 0.2s ease;
+                                &:hover {
+                                    border-color: #C7CCFF;
+                                }
+                                input {
+                                    position: absolute;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                }
+                                .b1 {
+                                    width: 52px;
+                                    height: 52px;
+                                    flex-shrink: 0;
+                                    border-radius: 14px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 18px;
+                                }
+                                .b2 {
+                                    flex: 1;
+                                    min-width: 0;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 2px;
+                                    .c1 {
+                                        font-weight: 600;
+                                        font-size: 15px;
+                                        color: #111827;
+                                    }
+                                    .c2 {
+                                        font-size: 12px;
+                                        color: #6B7280;
+                                    }
+                                }
+                                // دائرة الراديو
+                                .b3 {
+                                    width: 18px;
+                                    height: 18px;
+                                    flex-shrink: 0;
+                                    border: 1.5px solid #D1D5DB;
+                                    border-radius: 50%;
+                                    background-color: #FFFFFF;
+                                    transition: border 0.2s ease;
+                                }
+                                // لما يكون مختار
+                                &.active {
+                                    border: 1.5px solid #4F46E5;
+                                    background-color: #EEF0FF;
+                                    .b3 {
+                                        border: 5px solid #4F46E5;
+                                    }
+                                }
+                            }
+                            .a1 .b1 {
+                                background-color: #EEF0FF;
+                                color: #4F46E5;
+                            }
+                            .a2 .b1 {
+                                background-color: #E6F6F4;
+                                color: #0D9488;
+                            }
+                            .a1.active .b1 {
+                                background-color: #FFFFFF;
+                            }
+                        }
+                    }
+                    .p3, .p4 {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 16px;
+                    }
+                }
+                // المرفقات
+                .m3 {
+                    gap: 0;
+                    .p1 {
+                        margin-bottom: 14px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: #111827;
+                    }
+                    .p2 {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 6px;
+                        padding: 32px 20px;
+                        border: 1.5px dashed #C7CCFF;
+                        border-radius: 16px;
+                        background-color: #FAFAFF;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, border-color 0.2s ease;
+                        &:hover, &.drag {
+                            background-color: #EEF0FF;
+                            border-color: #4F46E5;
+                        }
+                        i {
+                            font-size: 22px;
+                            color: #4F46E5;
+                            transition: transform 0.2s ease;
+                        }
+                        &:hover i {
+                            transform: translateY(-3px);
+                        }
+                        .s1 {
+                            margin-top: 6px;
+                            font-weight: 600;
+                            font-size: 15px;
+                            color: #111827;
+                        }
+                        .s2 {
+                            font-size: 12px;
+                            color: #6B7280;
+                        }
+                    }
+                    .p3 {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        li {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 12px;
+                            margin-top: 10px;
+                            padding: 10px 14px;
+                            background-color: #F7F8FD;
+                            border: 1px solid #E6E8F2;
+                            border-radius: 12px;
+                            font-size: 13px;
+                            .s1 {
+                                min-width: 0;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                color: #111827;
+                            }
+                            .s2 {
+                                flex-shrink: 0;
+                                color: #6B7280;
+                                direction: ltr;
+                                unicode-bidi: isolate;
+                            }
+                            &.error .s2 {
+                                color: #E11D48;
+                            }
+                        }
+                    }
+                }
+                // الأزرار
+                .m4 {
+                    margin-top: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 12px;
+                    .s1, .s2 {
+                        height: 48px;
+                        padding: 0 28px;
+                        border-radius: 30px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
+                        &:hover {
+                            transform: translateY(-2px);
+                        }
+                    }
+                    .s1 {
+                        border: 0;
+                        background-color: #4F46E5;
+                        color: #FFFFFF;
+                        box-shadow: 0 10px 24px 0 #4F46E54D;
+                        &:hover {
+                            background-color: #6366F1;
+                            box-shadow: 0 12px 28px 0 rgba(79, 70, 229, 0.45);
+                        }
+                    }
+                    .s2 {
+                        border: 1.5px solid #111827;
+                        background-color: transparent;
+                        color: #111827;
+                        &:hover {
+                            background-color: #111827;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+            .div2 {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                position: sticky;
+                top: 92px;
+                // نصائح
+                .m1 {
+                    padding: 24px;
+                    background-color: #EEF0FF;
+                    border-radius: 20px;
+                    .p1 {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-bottom: 6px;
+                        i {
+                            font-size: 16px;
+                            color: #4F46E5;
+                        }
+                        p {
+                            font-weight: 800;
+                            font-size: 18px;
+                            color: #111827;
+                        }
+                    }
+                    .p2, .p3, .p4, .p5 {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                        margin-top: 14px;
+                        i {
+                            margin-top: 4px;
+                            font-size: 13px;
+                            color: #4F46E5;
+                        }
+                        p {
+                            font-size: 14px;
+                            line-height: 1.7;
+                            color: #111827;
+                        }
+                    }
+                }
+                // كيف يعمل الدفع
+                .m2 {
+                    padding: 24px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                    .p1 {
+                        font-weight: 800;
+                        font-size: 18px;
+                        color: #111827;
+                    }
+                    .p2 {
+                        margin-top: 14px;
+                        font-size: 14px;
+                        line-height: 1.9;
+                        color: #6B7280;
+                    }
+                }
+            }
+        }
+    }
+    .whats {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 50;
+        width: 56px;
+        height: 56px;
+        transition: transform 0.2s ease;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+}
+// end project
+// ======postjob.html :: end======
+// ======cheakout.html :: start======
+// start pay
+.pay {
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 48px;
+            padding-bottom: 40px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                a {
+                    color: #6B7280;
+                    transition: color 0.2s ease;
+                    &:hover {
+                        color: #4F46E5;
+                    }
+                }
+                .s1 {
+                    color: #6B7280;
+                }
+                .s2 {
+                    color: #111827;
+                }
+            }
+            .div2 {
+                margin-top: 12px;
+                .p1 {
+                    font-weight: 800;
+                    font-size: 44px;
+                    line-height: 1.4;
+                    color: #111827;
+                }
+                .p2 {
+                    margin-top: 6px;
+                    font-weight: 400;
+                    font-size: 19px;
+                    color: #6B7280;
+                }
+            }
+        }
+    }
+}
+// end pay
+// start checkout
+.checkout {
+    position: relative;
+    background-color: #F7F8FD;
+    .container {
+        .all {
+            padding-top: 40px;
+            padding-bottom: 96px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            align-items: start;
+            gap: 24px;
+            p {
+                margin-bottom: 0;
+            }
+            .div1 {
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                .m1, .m2 {
+                    padding: 32px 28px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #E6E8F2;
+                    border-radius: 20px;
+                    box-shadow: 0 18px 40px 0 #11182712;
+                    .p1 {
+                        margin-bottom: 20px;
+                        font-weight: 800;
+                        font-size: 20px;
+                        color: #111827;
+                    }
+                }
+                .m1 {
+                    .p2 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        .s1, .s2, .s3 {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            gap: 14px;
+                            padding: 20px;
+                            border: 1px solid #E6E8F2;
+                            border-radius: 16px;
+                            background-color: #FFFFFF;
+                            cursor: pointer;
+                            transition: border-color 0.2s ease, background-color 0.2s ease;
+                            &:hover {
+                                border-color: #C7CCFF;
+                            }
+                            input {
+                                position: absolute;
+                                opacity: 0;
+                                pointer-events: none;
+                            }
+                            .a1 {
+                                width: 52px;
+                                height: 52px;
+                                flex-shrink: 0;
+                                border-radius: 14px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 18px;
+                            }
+                            .a2 {
+                                flex: 1;
+                                min-width: 0;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2px;
+                                .b1 {
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                    color: #111827;
+                                }
+                                .b2 {
+                                    font-size: 12px;
+                                    color: #6B7280;
+                                }
+                            }
+                            .a3 {
+                                width: 18px;
+                                height: 18px;
+                                flex-shrink: 0;
+                                border: 1.5px solid #D1D5DB;
+                                border-radius: 50%;
+                                background-color: #FFFFFF;
+                                transition: border 0.2s ease;
+                            }
+                            &.active {
+                                border: 1.5px solid #4F46E5;
+                                background-color: #EEF0FF;
+                                .a3 {
+                                    border: 5px solid #4F46E5;
+                                }
+                            }
+                        }
+                        .s1 .a1 {
+                            background-color: transparent;
+                            color: #4F46E5;
+                        }
+                        .s2 .a1 {
+                            background-color: #EEF0FF;
+                            color: #4F46E5;
+                        }
+                        .s3 .a1 {
+                            background-color: #E6F6F4;
+                            color: #0D9488;
+                        }
+                    }
+                }
+                .m2 {
+                    transition: opacity 0.3s ease;
+                    &.hide {
+                        display: none;
+                    }
+                    .p2, .p3 {
+                        margin-bottom: 20px;
+                    }
+                    .p2 .s1, .p3 .s1,
+                    .p4 .a1 {
+                        display: block;
+                        margin-bottom: 8px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: #111827;
+                    }
+                    .p2 .s2, .p3 .s2,
+                    .p4 .a2 {
+                        height: 52px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding: 0 16px;
+                        border: 1px solid #E6E8F2;
+                        border-radius: 14px;
+                        background-color: #FFFFFF;
+                        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                        &:focus-within {
+                            border-color: #4F46E5;
+                            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+                        }
+                        i {
+                            font-size: 15px;
+                            color: #6B7280;
+                        }
+                        input {
+                            flex: 1;
+                            min-width: 0;
+                            height: 100%;
+                            border: 0;
+                            outline: 0;
+                            background: transparent;
+                            font-family: inherit;
+                            font-size: 15px;
+                            color: #111827;
+                        }
+                    }
+                    .p3 .s2 input,
+                    .p4 .a2 input {
+                        direction: ltr;
+                        text-align: right;
+                        letter-spacing: 0.5px;
+                    }
+                    .p4 {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 16px;
+                    }
+                    .p5 {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        margin-top: 20px;
+                        i {
+                            font-size: 14px;
+                            color: #0D9488;
+                        }
+                        p {
+                            font-size: 12px;
+                            color: #6B7280;
+                        }
+                    }
+                }
+            }
+            .div2 {
+                position: sticky;
+                top: 92px;
+                padding: 24px;
+                background-color: #FFFFFF;
+                border: 1px solid #E6E8F2;
+                border-radius: 20px;
+                box-shadow: 0 18px 40px 0 #11182712;
+                .m1 {
+                    font-weight: 800;
+                    font-size: 18px;
+                    color: #111827;
+                }
+                .m2 {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    margin-top: 16px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #E6E8F2;
+                    .s1 {
+                        width: 64px;
+                        height: 64px;
+                        flex-shrink: 0;
+                        border-radius: 16px;
+                        background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 22px;
+                        color: #FFFFFF;
+                    }
+                    .s2 {
+                        min-width: 0;
+                        .a1 {
+                            font-weight: 600;
+                            font-size: 15px;
+                            line-height: 1.6;
+                            color: #111827;
+                        }
+                        .a2 {
+                            margin-top: 2px;
+                            font-size: 12px;
+                            color: #6B7280;
+                        }
+                    }
+                }
+                .m3 {
+                    padding: 8px 0 16px;
+                    border-bottom: 1px solid #E6E8F2;
+                    .s1, .s2, .s3 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 14px;
+                        .a1 {
+                            font-size: 14px;
+                            color: #6B7280;
+                        }
+                        .a2 {
+                            font-size: 14px;
+                            color: #111827;
+                            direction: ltr;     
+                            unicode-bidi: isolate;
+                        }
+                    }
+                    .s2 .a2 {
+                        color: #6B7280;
+                    }
+                }
+                .m4 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 18px;
+                    .s1 {
+                        font-size: 15px;
+                        color: #6B7280;
+                    }
+                    .s2 {
+                        font-weight: 800;
+                        font-size: 18px;
+                        color: #111827;
+                        direction: ltr;
+                        unicode-bidi: isolate;
+                    }
+                }
+                .m5 {
+                    width: 100%;
+                    height: 48px;
+                    margin-top: 18px;
+                    border: 0;
+                    border-radius: 30px;
+                    background-color: #4F46E5;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    box-shadow: 0 10px 24px 0 #4F46E54D;
+                    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+                    span {
+                        direction: ltr;       
+                        unicode-bidi: isolate;
+                    }
+                    &:hover {
+                        background-color: #6366F1;
+                        box-shadow: 0 12px 28px 0 rgba(79, 70, 229, 0.45);
+                        transform: translateY(-2px);
+                    }
+                }
+                .m6 {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    margin-top: 16px;
+                    padding: 14px 16px;
+                    background-color: #E6F6F4;
+                    border-radius: 14px;
+                    i {
+                        margin-top: 4px;
+                        font-size: 14px;
+                        color: #0D9488;
+                    }
+                    p {
+                        font-size: 13px;
+                        line-height: 1.8;
+                        color: #111827;
+                    }
+                }
+            }
+        }
+    }
+    .whats {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 50;
+        width: 56px;
+        height: 56px;
+        transition: transform 0.2s ease;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+}
+// end checkout
+// ======cheakout.html :: end======
+
 
 // أنيميشن دوران الدائرة
 @keyframes randomMove {
@@ -7935,6 +8885,161 @@ footer .container .all {
 }
 
 
+// ======postjob.html :: responsive======
+//publish
+.publish .container .all {
+    @include down($bp-lg) {
+        padding-top: 36px;
+        padding-bottom: 28px;
+        .div2 .p1 { font-size: 34px; }
+    }
+
+    @include down($bp-md) {
+        // الخطوات: نخفي أسماء الخطوات القادمة ونخلي الخطوط تتمدد
+        .div3 {
+            gap: 8px;
+            .m2, .m4 { flex: 1; width: auto; min-width: 16px; }
+        }
+    }
+
+    @include down($bp-sm) {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        .div2 {
+            .p1 { font-size: 28px; }
+            .p2 { font-size: 16px; }
+        }
+        .div3 {
+            .m1 .s2, .m5 .s2 { display: none; }   // بس اسم الخطوة الحالية يظهر
+            .m3 .s2 { font-size: 13px; }
+        }
+    }
+}
+//project
+.project .container .all {
+    @include down($bp-xl) {
+        grid-template-columns: 1fr 320px;
+    }
+
+    @include down($bp-lg) {
+        grid-template-columns: 1fr;
+        padding-top: 8px;
+        padding-bottom: 72px;
+        .div2 {
+            position: static;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+        }
+    }
+
+    @include down($bp-md) {
+        padding-bottom: 64px;
+        .div1 {
+            .m1, .m2, .m3 { padding: 24px 20px; }
+            .m1 .p3,
+            .m2 .p2 .s2,
+            .m2 .p3,
+            .m2 .p4 { grid-template-columns: 1fr; }
+        }
+        .div2 { grid-template-columns: 1fr; }
+    }
+
+    @include down($bp-sm) {
+        .div1 {
+            .m1, .m2, .m3 { padding: 20px 16px; }
+            .m1 .p1 .s1,
+            .m2 .p1 { font-size: 18px; }
+            .m2 .p2 .s2 {
+                .a1, .a2 { padding: 14px 16px; }
+                .b1 { width: 44px; height: 44px; font-size: 16px; }
+            }
+            .m3 .p2 { padding: 26px 16px; }
+            .m4 {
+                flex-direction: column;
+                align-items: stretch;
+                .s1, .s2 { width: 100%; }
+            }
+        }
+        .div2 .m1, .div2 .m2 { padding: 20px; }
+    }
+}
+.project .whats {
+    @include down($bp-sm) {
+        width: 48px;
+        height: 48px;
+        left: 16px;
+        bottom: 16px;
+    }
+}
+
+
+// ======cheakout.html :: responsive======
+//pay
+.pay .container .all {
+    @include down($bp-lg) {
+        padding-top: 36px;
+        padding-bottom: 28px;
+        .div2 .p1 { font-size: 34px; }
+    }
+
+    @include down($bp-sm) {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        .div2 {
+            .p1 { font-size: 28px; }
+            .p2 { font-size: 16px; }
+        }
+    }
+}
+//checkout
+.checkout .container .all {
+    @include down($bp-xl) {
+        grid-template-columns: 1fr 340px;
+    }
+
+    @include down($bp-lg) {
+        grid-template-columns: 1fr;
+        padding-top: 8px;
+        padding-bottom: 72px;
+        .div2 { position: static; }
+    }
+
+    @include down($bp-md) {
+        padding-bottom: 64px;
+        .div1 .m1, .div1 .m2 { padding: 24px 20px; }
+    }
+
+    @include down($bp-sm) {
+        .div1 {
+            .m1, .m2 {
+                padding: 20px 16px;
+                .p1 { font-size: 18px; }
+            }
+            .m1 .p2 {
+                .s1, .s2, .s3 {
+                    padding: 14px;
+                    gap: 12px;
+                    .a1 { width: 44px; height: 44px; font-size: 16px; }
+                    .a2 .b1 { font-size: 14px; }
+                }
+            }
+            .m2 .p4 { grid-template-columns: 1fr; }
+        }
+        .div2 {
+            padding: 20px;
+            .m2 .s1 { width: 54px; height: 54px; font-size: 19px; }
+        }
+    }
+}
+.checkout .whats {
+    @include down($bp-sm) {
+        width: 48px;
+        height: 48px;
+        left: 16px;
+        bottom: 16px;
+    }
+}
 // ===== Dark Mode =====
 // ---------- لوحة ألوان الوضع الليلي ----------
 $d-bg:        #0B0D17;   // خلفية الصفحة        (بدل #FFFFFF)
@@ -8939,4 +10044,251 @@ html[data-theme="dark"] {
         }
     }
 }
+
+// ======postjob.html :: dark mode======
+html[data-theme="dark"] {
+    // ================= العنوان والخطوات =================
+    .publish {
+        background-color: $d-surface;
+        .container .all {
+            .div1 {
+                a { color: $d-muted; &:hover { color: $d-accent; } }
+                .s1 { color: $d-muted; }
+                .s2 { color: $d-text; }
+            }
+            .div2 {
+                .p1 { color: $d-text; }
+                .p2 { color: $d-muted; }
+            }
+            .div3 {
+                .m1 {
+                    .s1 { background-color: $d-teal; color: $d-bg; }
+                    .s2 { color: $d-text; }
+                }
+                .m3 {
+                    .s1 { background-color: #6366F1; }
+                    .s2 { color: $d-accent; }
+                }
+                .m5 {
+                    .s1 { background-color: $d-card; border-color: $d-border; color: $d-muted; }
+                    .s2 { color: $d-muted; }
+                }
+                .m2 { background-color: $d-teal; }
+                .m4 { background-color: $d-border; }
+            }
+        }
+    }
+
+    // ================= النموذج والشريط الجانبي =================
+    .project {
+        background-color: $d-bg;
+        .container .all {
+            .div1 {
+                .m1, .m2, .m3 {
+                    background-color: $d-card;
+                    border-color: $d-border;
+                    box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                }
+                .m2 { border-color: $d-accent; }
+                .m1 .p2 .s1, .m1 .p4 .s1,
+                .p3 label.a1, .p4 label.a1 { color: $d-text; }
+                .m1 .p2 .s2,
+                .p3 .a2,
+                .m2 .p4 .a2 {
+                    background-color: $d-surface;
+                    border-color: $d-border;
+                    &:focus-within { border-color: $d-accent; }
+                    i { color: $d-muted; }
+                    input, select { color: $d-text; }
+                    select option { background-color: $d-card; }
+                }
+                .m1 {
+                    .p1 {
+                        .s1 { color: $d-text; }
+                        .s2 { background-color: rgba(45, 212, 191, 0.12); color: $d-teal; }
+                    }
+                    .p4 .s2 {
+                        background-color: $d-surface;
+                        border-color: $d-border;
+                        color: $d-text;
+                        &:focus { border-color: $d-accent; }
+                    }
+                }
+                .m2 {
+                    .p1 { color: $d-text; }
+                    .p2 {
+                        .s1 { color: $d-text; }
+                        .s2 {
+                            .a1, .a2 {
+                                background-color: $d-surface;
+                                border-color: $d-border;
+                                &:hover { border-color: $d-chip-hover; }
+                                .b2 {
+                                    .c1 { color: $d-text; }
+                                    .c2 { color: $d-muted; }
+                                }
+                                .b3 { background-color: transparent; border-color: $d-muted; }
+                                &.active {
+                                    background-color: $d-chip;
+                                    border-color: $d-accent;
+                                    .b3 { border-color: $d-accent; }
+                                }
+                            }
+                            .a1 .b1 { background-color: $d-chip; color: $d-accent; }
+                            .a1.active .b1 { background-color: $d-card; }
+                            .a2 .b1 { background-color: rgba(45, 212, 191, 0.12); color: $d-teal; }
+                        }
+                    }
+                }
+                .m3 {
+                    .p1 { color: $d-text; }
+                    .p2 {
+                        background-color: rgba(129, 140, 248, 0.06);
+                        border-color: $d-chip-hover;
+                        &:hover, &.drag {
+                            background-color: $d-chip;
+                            border-color: $d-accent;
+                        }
+                        i { color: $d-accent; }
+                        .s1 { color: $d-text; }
+                        .s2 { color: $d-muted; }
+                    }
+                    .p3 li {
+                        background-color: $d-surface;
+                        border-color: $d-border;
+                        .s1 { color: $d-text; }
+                        .s2 { color: $d-muted; }
+                        &.error .s2 { color: #FB7185; }
+                    }
+                }
+                .m4 .s2 {
+                    border-color: $d-text;
+                    color: $d-text;
+                    &:hover { background-color: $d-text; color: $d-bg; }
+                }
+            }
+            .div2 {
+                .m1 {
+                    background-color: $d-chip;
+                    .p1 {
+                        i { color: $d-accent; }
+                        p { color: $d-text; }
+                    }
+                    .p2, .p3, .p4, .p5 {
+                        i { color: $d-accent; }
+                        p { color: $d-text; }
+                    }
+                }
+                .m2 {
+                    background-color: $d-card;
+                    border-color: $d-border;
+                    box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                    .p1 { color: $d-text; }
+                    .p2 { color: $d-muted; }
+                }
+            }
+        }
+    }
+}
+
+// ======cheakout.html :: dark mode======
+html[data-theme="dark"] {
+    // ================= العنوان =================
+    .pay {
+        background-color: $d-surface;
+        .container .all {
+            .div1 {
+                a { color: $d-muted; &:hover { color: $d-accent; } }
+                .s1 { color: $d-muted; }
+                .s2 { color: $d-text; }
+            }
+            .div2 {
+                .p1 { color: $d-text; }
+                .p2 { color: $d-muted; }
+            }
+        }
+    }
+
+    // ================= النموذج والملخص =================
+    .checkout {
+        background-color: $d-bg;
+        .container .all {
+            .div1 {
+                .m1, .m2 {
+                    background-color: $d-card;
+                    border-color: $d-border;
+                    box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                    .p1 { color: $d-text; }
+                }
+                .m1 .p2 {
+                    .s1, .s2, .s3 {
+                        background-color: $d-surface;
+                        border-color: $d-border;
+                        &:hover { border-color: $d-chip-hover; }
+                        .a2 {
+                            .b1 { color: $d-text; }
+                            .b2 { color: $d-muted; }
+                        }
+                        .a3 { background-color: transparent; border-color: $d-muted; }
+                        &.active {
+                            background-color: $d-chip;
+                            border-color: $d-accent;
+                            .a3 { border-color: $d-accent; }
+                        }
+                    }
+                    .s1 .a1 { color: $d-accent; }
+                    .s2 .a1 { background-color: $d-chip; color: $d-accent; }
+                    .s3 .a1 { background-color: rgba(45, 212, 191, 0.12); color: $d-teal; }
+                }
+                .m2 {
+                    .p2 .s1, .p3 .s1,
+                    .p4 .a1 { color: $d-text; }
+                    .p2 .s2, .p3 .s2,
+                    .p4 .a2 {
+                        background-color: $d-surface;
+                        border-color: $d-border;
+                        &:focus-within { border-color: $d-accent; }
+                        i { color: $d-muted; }
+                        input { color: $d-text; }
+                    }
+                    .p5 {
+                        i { color: $d-teal; }
+                        p { color: $d-muted; }
+                    }
+                }
+            }
+            .div2 {
+                background-color: $d-card;
+                border-color: $d-border;
+                box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.35);
+                .m1 { color: $d-text; }
+                .m2 {
+                    border-color: $d-border;
+                    .s2 {
+                        .a1 { color: $d-text; }
+                        .a2 { color: $d-muted; }
+                    }
+                }
+                .m3 {
+                    border-color: $d-border;
+                    .s1, .s2, .s3 {
+                        .a1 { color: $d-muted; }
+                        .a2 { color: $d-text; }
+                    }
+                    .s2 .a2 { color: $d-muted; }
+                }
+                .m4 {
+                    .s1 { color: $d-muted; }
+                    .s2 { color: $d-text; }
+                }
+                .m6 {
+                    background-color: rgba(45, 212, 191, 0.1);
+                    i { color: $d-teal; }
+                    p { color: $d-text; }
+                }
+            }
+        }
+    }
+}
+
 
