@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>حِرفة</title>
+        <!-- ضبط الوضع الليلي مبكراً قبل ظهور الصفحة -->
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <link rel="stylesheet" href="css/brands.min.css"/>
+        <link rel="stylesheet" href="css/fontawesome.min.css"/>
+        <!--  استدعاء ملف البوتوستراب  -->
+        <link href="css/Bootstrapvarsio5.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- ملفات الاتصال المسبق بخطوط قوقل وأيقونة الموقع -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="image/Logo Mark.png" type="images/x-icon">
+    </head>
+    <body>
+        <main>
+            <!-- start nav -->
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="image/Logo.png" data-light="image/Logo.png" data-dark="image/Logowhite.png" alt="" ></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="freelancer.html">ابحث عن مستقل</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#search">الخدمات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="jobs.html">الوظائف</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#why">الفرق</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#work">كيف تعمل</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn1"  >
+                            <div>
+                                <img src="image/languages.png" alt="">
+                                <p>EN</p>
+                            </div>
+                        </button>
+                        <button type="button" class="btn btn2" id="themeToggle" aria-label="تبديل الوضع الليلي"><i class="fa-regular fa-moon"></i></button>
+                        <a href="login.html"><button type="button" class="btn btn3" >تسجيل الدخول</button></a>
+                        <button type="button" class="btn btn4">ابدأ الآن</button>
+                    </div>
+                </div>
+            </nav>
+            <!-- end nav -->
+            <!-- start pay -->
+            <section class="pay">
+                <div class="container">
+                    <div class="all">
+                        <div class="div1">
+                            <a href="index.html">الرئيسية</a>
+                            <span class="s1">/</span>
+                            <a href="index.html#search">الخدمات</a>
+                            <span class="s1">/</span>
+                            <span class="s2">إتمام الدفع</span>
+                        </div>
+                        <div class="div2">
+                            <p class="p1">إتمام الدفع</p>
+                            <p class="p2">ادفع بأمان، ويبقى المبلغ محجوزاً حتى تستلم العمل.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end pay -->
+            <!-- start checkout -->
+            <section class="checkout">
+                <div class="container">
+                    <div class="all">
+                        <form class="div1" action="#">
+                            <div class="m1">
+                                <p class="p1">اختر طريقة الدفع</p>
+                                <div class="p2">
+                                    <label class="s1 active">
+                                        <input type="radio" name="method" value="card" checked>
+                                        <span class="a1"><i class="fa-regular fa-credit-card"></i></span>
+                                        <span class="a2">
+                                            <span class="b1">بطاقة فيزا / ماستركارد</span>
+                                            <span class="b2">دفع آمن عبر Stripe</span>
+                                        </span>
+                                        <span class="a3"></span>
+                                    </label>
+                                    <label class="s2">
+                                        <input type="radio" name="method" value="paypal">
+                                        <span class="a1"><i class="fa-solid fa-wallet"></i></span>
+                                        <span class="a2">
+                                            <span class="b1">PayPal</span>
+                                            <span class="b2">ستنتقل لصفحة PayPal لتأكيد الدفع</span>
+                                        </span>
+                                        <span class="a3"></span>
+                                    </label>
+                                    <label class="s3">
+                                        <input type="radio" name="method" value="support">
+                                        <span class="a1"><i class="fa-regular fa-comment"></i></span>
+                                        <span class="a2">
+                                            <span class="b1">تحويل عبر الدعم الفني</span>
+                                            <span class="b2">تحويل بنكي أو محفظة محلية بالتنسيق على واتساب</span>
+                                        </span>
+                                        <span class="a3"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- بيانات البطاقة -->
+                            <div class="m2" id="cardBox">
+                                <p class="p1">بيانات البطاقة</p>
+                                <div class="p2">
+                                    <label class="s1" for="cardName">الاسم على البطاقة</label>
+                                    <div class="s2">
+                                        <input type="text" id="cardName" value="SARA AHMAD" autocomplete="cc-name">
+                                    </div>
+                                </div>
+                                <div class="p3">
+                                    <label class="s1" for="cardNumber">رقم البطاقة</label>
+                                    <div class="s2">
+                                        <i class="fa-regular fa-credit-card"></i>
+                                        <input type="text" id="cardNumber" value="4242  4242  4242  4242" inputmode="numeric" autocomplete="cc-number" maxlength="25">
+                                    </div>
+                                </div>
+                                <div class="p4">
+                                    <div class="s1">
+                                        <label class="a1" for="cardExp">تاريخ الانتهاء</label>
+                                        <div class="a2">
+                                            <i class="fa-regular fa-calendar"></i>
+                                            <input type="text" id="cardExp" value="12 / 28" placeholder="MM / YY" inputmode="numeric" autocomplete="cc-exp" maxlength="7">
+                                        </div>
+                                    </div>
+                                    <div class="s2">
+                                        <label class="a1" for="cardCvc">CVC</label>
+                                        <div class="a2">
+                                            <i class="fa-solid fa-lock"></i>
+                                            <input type="password" id="cardCvc" value="123" inputmode="numeric" autocomplete="cc-csc" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p5">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <p>بياناتك مشفّرة ولا نحتفظ برقم البطاقة.</p>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="div2">
+                            <p class="m1">ملخص الطلب</p>
+                            <div class="m2">
+                                <span class="s1"><i class="fa-solid fa-pen-nib"></i></span>
+                                <div class="s2">
+                                    <p class="a1">سأصمم لك شعاراً وهوية بصرية كاملة</p>
+                                    <p class="a2">الباقة القياسية · محمد العطار</p>
+                                </div>
+                            </div>
+                            <div class="m3">
+                                <div class="s1">
+                                    <p class="a1">سعر الباقة</p>
+                                    <p class="a2" id="price">$90.00</p>
+                                </div>
+                                <div class="s2">
+                                    <p class="a1">رسوم الخدمة (3%)</p>
+                                    <p class="a2" id="fee">+$2.70</p>
+                                </div>
+                                <div class="s3">
+                                    <p class="a1">مدة التسليم</p>
+                                    <p class="a2">5 أيام</p>
+                                </div>
+                            </div>
+                            <div class="m4">
+                                <p class="s1">الإجمالي</p>
+                                <p class="s2" id="total">$92.70</p>
+                            </div>
+                            <button type="button" class="m5" id="payBtn">ادفع <span>92.70$</span></button>
+                            <div class="m6">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>المبلغ محجوز لدى المنصة ولا يُحرَّر للبائع إلا بعد موافقتك على التسليم.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://web.whatsapp.com/" target="_blank" class="whats"><img src="image/WhatsApp FAB.png" alt=""></a>
+            </section>
+            <!-- end checkout -->
+            <!-- start footer -->
+            <footer>
+                <div class="container">
+                    <div class="all">
+                        <div class="div1">
+                            <div class="m1">
+                                <img src="image/Logo0.png" data-light="image/Logo0.png" data-dark="image/Logowhite.png" alt="">
+                                <p class="p1">منصة عربية تربط المستقلين بالعملاء والشركات حول العالم. اعرض حرفتك، واكسب فرصتك.</p>
+                                <div class="p2">
+                                    <a href="https://instagram.com/" target="_blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://facebook.com/" target="_blank">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/" target="_blank">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://x.com/" target="_blank">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="m2">
+                                <div class="p1">
+                                    <p class="s1">المنصة</p>
+                                    <a href="" class="s2" target="_blank">ابحث عن مستقل</a>
+                                    <a href="" class="s3" target="_blank">الخدمات</a>
+                                    <a href="" class="s4" target="_blank">الوظائف</a>
+                                    <a href="" class="s5" target="_blank">الفرق</a>
+                                </div>
+                                <div class="p2">
+                                    <p class="s1">للمستقلين</p>
+                                    <a href="" class="s2" target="_blank">أنشئ ملفك</a>
+                                    <a href="" class="s3" target="_blank">كيف تقدّم عرضاً</a>
+                                    <a href="" class="s4" target="_blank">التوثيق</a>
+                                    <a href="" class="s5" target="_blank">أضف خدمة</a>
+                                </div>
+                                <div class="p3">
+                                    <p class="s1">حِرفة</p>
+                                    <a href="" class="s2" target="_blank">من نحن</a>
+                                    <a href="" class="s3" target="_blank">الأسئلة الشائعة</a>
+                                    <a href="" class="s4" target="_blank">تواصل معنا</a>
+                                    <a href="" class="s5" target="_blank">الشروط والخصوصية</a>
+                                </div>
+                                <div class="p4">
+                                    <p class="s1">الدعم الفني</p>
+                                    <a href="https://web.whatsapp.com/" target="_blank" class="s2">
+                                        <img src="image/whats.png" alt="">
+                                        <p>واتساب</p>
+                                    </a>
+                                    <a href="" class="s3" target="_blank">للمساعدة والاستفسارات</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div2">
+                            <p class="m1">&copy; 2026 حِرفة. جميع الحقوق محفوظة.</p>
+                            <p class="m2">حرفتك تصنع فرصتك.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </main>
+
+
+        
+
+
+
+
+        <!-- ملف الجافا سكريبت الأساسي للموقع -->
+        <script src="js/script.js"></script>
+        <!-- مكتبة بوتستراب 5 للأجزاء التفاعلية مثل القوائم والنوافذ -->
+        <script src="js/Bootstrapvarsio5.js"></script>
+        <!-- ملف الأكواد والتخصيصات الخاصة بي -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
