@@ -251,3 +251,142 @@ new MutationObserver(swapImages).observe(document.documentElement, {
     attributeFilter: ['data-theme']
 });
 // ======تبديل الصور حسب الوضع :: end======
+// ======postjob.html :: start======
+const project = document.querySelector('.project');
+if (project) {
+
+    // ---------- نوع العقد (سعر ثابت / بالساعة) ----------
+    const contractCards = project.querySelectorAll('.m2 .p2 .s2 label');
+    const minLabel = project.querySelector('label[for="min"]');
+    const maxLabel = project.querySelector('label[for="max"]');
+
+    contractCards.forEach((card) => {
+        card.querySelector('input').addEventListener('change', () => {
+            contractCards.forEach((c) => c.classList.remove('active'));
+            card.classList.add('active');
+
+            // نغيّر عناوين الميزانية حسب النوع
+            const hourly = card.querySelector('input').value === 'hourly';
+            minLabel.textContent = hourly ? 'أقل سعر للساعة (USD)' : 'الحد الأدنى (USD)';
+            maxLabel.textContent = hourly ? 'أعلى سعر للساعة (USD)' : 'الحد الأعلى (USD)';
+        });
+    });
+
+    // ---------- التأكد إن الحد الأعلى مش أقل من الأدنى ----------
+    const min = document.getElementById('min');
+    const max = document.getElementById('max');
+    max.addEventListener('change', () => {
+        if (Number(max.value) < Number(min.value)) {
+            max.value = min.value;
+        }
+    });
+
+    // ---------- المرفقات (سحب وإفلات) ----------
+    const dropZone = document.getElementById('dropZone');
+    const files = document.getElementById('files');
+    const fileList = document.getElementById('fileList');
+    const MAX_SIZE = 20 * 1024 * 1024;   // 20MB
+
+    function showFiles(list) {
+        fileList.innerHTML = '';
+        Array.from(list).forEach((file) => {
+            const li = document.createElement('li');
+            const name = document.createElement('span');
+            const size = document.createElement('span');
+            name.className = 's1';
+            size.className = 's2';
+            name.textContent = file.name;
+            if (file.size > MAX_SIZE) {
+                li.classList.add('error');
+                size.textContent = 'أكبر من 20MB';
+            } else {
+                size.textContent = (file.size / 1024 / 1024).toFixed(1) + ' MB';
+            }
+            li.append(name, size);
+            fileList.appendChild(li);
+        });
+    }
+
+    files.addEventListener('change', () => showFiles(files.files));
+
+    ['dragenter', 'dragover'].forEach((ev) => {
+        dropZone.addEventListener(ev, (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag');
+        });
+    });
+    ['dragleave', 'drop'].forEach((ev) => {
+        dropZone.addEventListener(ev, (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag');
+        });
+    });
+    dropZone.addEventListener('drop', (e) => {
+        files.files = e.dataTransfer.files;
+        showFiles(files.files);
+    });
+}
+// ======postjob.html :: end======
+// ======cheakout.html :: start======
+// أضف هذا الكود في آخر js/custom.js — يعمل فقط بصفحة إتمام الدفع
+const checkout = document.querySelector('.checkout');
+if (checkout) {
+
+    // ---------- اختيار طريقة الدفع ----------
+    const methods = checkout.querySelectorAll('.m1 .p2 label');
+    const cardBox = document.getElementById('cardBox');
+    const payBtn = document.getElementById('payBtn');
+    const total = document.getElementById('total').textContent.replace('$', '');
+
+    methods.forEach((method) => {
+        method.querySelector('input').addEventListener('change', () => {
+            methods.forEach((m) => m.classList.remove('active'));
+            method.classList.add('active');
+
+            const value = method.querySelector('input').value;
+            // بيانات البطاقة تظهر بس لما تختار البطاقة
+            cardBox.classList.toggle('hide', value !== 'card');
+            // نص الزر حسب الطريقة
+            if (value === 'paypal') {
+                payBtn.innerHTML = 'تابع إلى PayPal';
+            } else if (value === 'support') {
+                payBtn.innerHTML = 'تواصل مع الدعم الفني';
+            } else {
+                payBtn.innerHTML = 'ادفع <span>' + total + '$</span>';
+            }
+        });
+    });
+
+    // ---------- رقم البطاقة: أرقام فقط ومسافة بعد كل 4 ----------
+    const cardNumber = document.getElementById('cardNumber');
+    cardNumber.addEventListener('input', () => {
+        const digits = cardNumber.value.replace(/\D/g, '').slice(0, 19);
+        cardNumber.value = digits.replace(/(\d{4})(?=\d)/g, '$1  ');
+    });
+
+    // ---------- تاريخ الانتهاء: MM / YY ----------
+    const cardExp = document.getElementById('cardExp');
+    cardExp.addEventListener('input', (e) => {
+        let digits = cardExp.value.replace(/\D/g, '').slice(0, 4);
+        // إذا مسح المستخدم، ما نرجّع الشرطة
+        if (e.inputType === 'deleteContentBackward') {
+            cardExp.value = digits.length > 2 ? digits.slice(0, 2) + ' / ' + digits.slice(2) : digits;
+            return;
+        }
+        if (digits.length >= 2) {
+            // الشهر ما بيزيد عن 12
+            let month = Math.min(Math.max(parseInt(digits.slice(0, 2), 10), 1), 12);
+            digits = String(month).padStart(2, '0') + digits.slice(2);
+            cardExp.value = digits.slice(0, 2) + ' / ' + digits.slice(2);
+        } else {
+            cardExp.value = digits;
+        }
+    });
+
+    // ---------- CVC: أرقام فقط ----------
+    const cardCvc = document.getElementById('cardCvc');
+    cardCvc.addEventListener('input', () => {
+        cardCvc.value = cardCvc.value.replace(/\D/g, '').slice(0, 4);
+    });
+}
+// ======cheakout.html :: end======
