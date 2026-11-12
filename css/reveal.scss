@@ -1,0 +1,24 @@
+// ======scroll reveal :: start======
+// العنصر مخفي لحد ما يوصله السكرول (بس إذا الجافا شغال)
+html.reveal-on .reveal:not(.show) {
+    opacity: 0;
+}
+html.reveal-on .reveal.show {
+    animation: revealUp 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0s) backwards;
+}
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+// للي مفعّل "تقليل الحركة" بجهازه: تظهر العناصر بدون حركة
+@media (prefers-reduced-motion: reduce) {
+    html.reveal-on .reveal:not(.show) { opacity: 1; }
+    html.reveal-on .reveal.show { animation: none; }
+}
+// ======scroll reveal :: end======
