@@ -390,3 +390,204 @@ if (checkout) {
     });
 }
 // ======cheakout.html :: end======
+// ======services.html :: start======
+// أضف هذا الكود في آخر js/custom.js — يعمل فقط بصفحة الخدمات
+const services = document.querySelector('.services');
+if (services) {
+
+    const tabs = services.querySelectorAll('#tabs button');
+    const cardsBox = document.getElementById('cards');
+    const cards = Array.from(cardsBox.querySelectorAll(':scope > a'));
+    const searchForm = document.getElementById('serviceSearch');
+    const searchInput = document.getElementById('searchInput');
+    const count = document.getElementById('count');
+    const empty = document.getElementById('empty');
+    const total = count.textContent;          // 248 = كل خدمات المنصة
+    let activeCat = 'all';
+
+    // ---------- الفلترة (التصنيف + البحث) ----------
+    function filterCards() {
+        const word = searchInput.value.trim();
+        let visible = 0;
+
+        cards.forEach((card) => {
+            const title = card.querySelector('.b2').textContent;
+            const okCat = activeCat === 'all' || card.dataset.cat === activeCat;
+            const okWord = word === '' || title.includes(word);
+            const show = okCat && okWord;
+            card.classList.toggle('hide', !show);
+            if (show) visible++;
+        });
+
+        // إذا ما في فلترة نعرض العدد الكلي، غير هيك عدد النتائج
+        count.textContent = (activeCat === 'all' && word === '') ? total : visible;
+        empty.classList.toggle('show', visible === 0);
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach((t) => t.classList.remove('active'));
+            tab.classList.add('active');
+            activeCat = tab.dataset.cat;
+            filterCards();
+        });
+    });
+
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        filterCards();
+    });
+    searchInput.addEventListener('input', filterCards);
+
+    // ---------- الترتيب ----------
+    const getPrice = (card) => Number(card.querySelector('.c2 span').textContent.replace(/\D/g, ''));
+    const getRate = (card) => parseFloat(card.querySelector('.b3 .c1 p').textContent);
+
+    document.getElementById('sort').addEventListener('change', (e) => {
+        const sorted = [...cards].sort((a, b) => {
+            if (e.target.value === 'low') return getPrice(a) - getPrice(b);
+            if (e.target.value === 'high') return getPrice(b) - getPrice(a);
+            return getRate(b) - getRate(a);
+        });
+        sorted.forEach((card) => cardsBox.appendChild(card));
+    });
+
+    // ---------- الترقيم (شكل فقط لحين ربطه بالباك اند) ----------
+    const pages = services.querySelectorAll('.div5 a');
+    pages.forEach((page) => {
+        page.addEventListener('click', (e) => {
+            e.preventDefault();
+            const nums = [...pages].slice(1, -1);
+            let current = nums.findIndex((p) => p.classList.contains('active'));
+            if (page.classList.contains('m1')) current = Math.max(current - 1, 0);
+            else if (page.classList.contains('m5')) current = Math.min(current + 1, nums.length - 1);
+            else current = nums.indexOf(page);
+            nums.forEach((p) => p.classList.remove('active'));
+            nums[current].classList.add('active');
+        });
+    });
+}
+// ======services.html :: end======
+// ======servicedetails.html :: start======
+const pkgSection = document.querySelector('.package');
+if (pkgSection) {
+
+    // ---------- معرض الصور ----------
+    const galleryMain = document.getElementById('galleryMain');
+    const thumbs = document.querySelectorAll('#galleryThumbs button');
+
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+            thumbs.forEach((t) => t.classList.remove('active'));
+            thumb.classList.add('active');
+            // نفس لون الصورة الصغيرة يصير للصورة الكبيرة
+            galleryMain.style.background = getComputedStyle(thumb).backgroundImage;
+            // نعيد إنشاء الأيقونة حتى تشتغل الحركة كل مرة
+            galleryMain.innerHTML = '<i class="' + thumb.dataset.icon + '"></i>';
+        });
+    });
+
+    // ---------- الباقات ----------
+    // عدّل الأسعار والمحتوى من هون
+    const packages = {
+        basic: {
+            name: 'الباقة الأساسية',
+            price: 40,
+            desc: 'شعار احترافي مع ملفات جاهزة للاستخدام على الويب والطباعة.',
+            days: '3 أيام',
+            edits: 'تعديلان',
+            list: ['مقترحان للشعار', 'ملفات PNG و SVG']
+        },
+        standard: {
+            name: 'الباقة القياسية',
+            price: 90,
+            desc: 'شعار + لوحة ألوان وخطوط + بطاقة عمل وتصاميم لوسائل التواصل.',
+            days: '5 أيام',
+            edits: '3 تعديلات',
+            list: ['3 مقترحات للشعار', 'ملفات المصدر', 'دليل الهوية المختصر', 'تصاميم لوسائل التواصل']
+        },
+        premium: {
+            name: 'الباقة المتقدمة',
+            price: 180,
+            desc: 'هوية متكاملة مع دليل تفصيلي، وتصاميم المطبوعات والتغليف.',
+            days: '7 أيام',
+            edits: 'غير محدودة',
+            list: ['5 مقترحات للشعار', 'ملفات المصدر', 'دليل هوية تفصيلي', 'تصاميم مطبوعات وتغليف', 'نماذج عرض Mockups']
+        }
+    };
+
+    const pkgTabs = document.querySelectorAll('#pkgTabs button');
+    const pkgName = document.getElementById('pkgName');
+    const pkgPrice = document.getElementById('pkgPrice');
+    const pkgDesc = document.getElementById('pkgDesc');
+    const pkgDays = document.getElementById('pkgDays');
+    const pkgEdits = document.getElementById('pkgEdits');
+    const pkgList = document.getElementById('pkgList');
+    const pkgBtn = document.getElementById('pkgBtn');
+
+    pkgTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            pkgTabs.forEach((t) => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const p = packages[tab.dataset.pkg];
+            pkgName.textContent = p.name;
+            pkgPrice.textContent = '$' + p.price;
+            pkgDesc.textContent = p.desc;
+            pkgDays.textContent = p.days;
+            pkgEdits.textContent = p.edits;
+            pkgList.innerHTML = p.list
+                .map((item) => '<li><i class="fa-solid fa-check"></i>' + item + '</li>')
+                .join('');
+            pkgBtn.innerHTML = 'اطلب الآن <span>(' + p.price + '$)</span>';
+            // نبعث الباقة لصفحة الدفع
+            pkgBtn.href = 'cheakout.html?package=' + tab.dataset.pkg;
+        });
+    });
+}
+// ======servicedetails.html :: end======
+// ======scroll reveal :: start======
+(function () {
+    if (!('IntersectionObserver' in window)) return;
+
+    // 1) الكروت اللي بدنا تظهر ورا بعض (كل كرت لحاله)
+    const cardSelectors = [
+        '.search .div2 > div',      // التصنيفات بالرئيسية
+        '.work .div2 > div',        // كيف تعمل
+        '.people .div2 > div',      // المستقلون
+        '.jobs .m2 > div',          // الوظائف والخدمات بالرئيسية
+        '.why .div2 > div',         // لماذا حرفة
+        '.services .div3 > a',      // كروت صفحة الخدمات
+        '.reveal-item'              // أي عنصر بدك تضيفه يدوياً
+    ];
+    const cards = document.querySelectorAll(cardSelectors.join(','));
+    cards.forEach((card) => card.classList.add('reveal'));
+
+    // 2) البلوكات الكبيرة بكل قسم (إلا اللي جواها كروت، لأنها بتظهر كرت كرت)
+    document.querySelectorAll('section .all > *, footer .all > *').forEach((block) => {
+        if (!block.classList.contains('reveal') && !block.querySelector('.reveal')) {
+            block.classList.add('reveal');
+        }
+    });
+
+    // 3) تأخير بسيط بين العناصر الإخوة حتى تطلع ورا بعض
+    document.querySelectorAll('.reveal').forEach((el) => {
+        const siblings = [...el.parentElement.children].filter((c) => c.classList.contains('reveal'));
+        const index = siblings.indexOf(el) % 4;           // كل 4 عناصر نرجع من الأول
+        el.style.setProperty('--delay', (index * 0.1) + 's');
+    });
+
+    // 4) نراقب العناصر: أول ما يبين 15% من العنصر يظهر، ومرة وحدة بس
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    document.documentElement.classList.add('reveal-on');
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+})();
+// ======scroll reveal :: end======
